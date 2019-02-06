@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+# JAVA Advanced (31089/1607/1819/1/72)
+## Introductie
+### OLOD Fiche
 
-You can use the [editor on GitHub](https://github.com/ddhaese/Java_Advanced/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+| Omschrijving                   | Waarde                          |
+|--------------------------------|---------------------------------|
+| Studieomvang                   | 3 studiepunten                  |
+| Co-titularis(sen)              | D'Haese David                   |
+| Onderwijstaal                  | Nederlands                      |
+| Quotering                      | Op 20 (tot op een geheel getal) |
+| Tweede examenkans              | Mogelijk                        |
+| Tolereerbaarheid               | Wordt nooit getolereerd         |
+| Totale studietijd              | 75,00 uren                      |
+| Volgtijdelijkheid              | Object Oriented Programming     |
+| Hoor- en/of werkcolleges       | 12,00 uren                      |
+| Practicum en/of oefeningen     | 12,00 uren                      |
+| Werktijd buiten de contacturen | 51,00 uren                      |
+| Toetsing type                  | Vaardigheidstoets hands on      |
+| Toetsing vorm                  | Digitaal                        |
+| Toetsing duur                  | 240 min                         |
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Korte omschrijving OLOD
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ddhaese/Java_Advanced/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+In dit OLOD word je ondergedompeld in Java. Je leert de populairste en recentste Java frameworks gebruiken en bouwt een degelijke basis op die je zal toepassen in het informatica project.
