@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # JAVA Advanced (31089/1607/1819/1/72)
 ## Introductie
 ### OLOD Fiche
