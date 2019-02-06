@@ -22,7 +22,7 @@ Je hebt uiteraard het internet ter beschikking als je met bepaalde vragen zit. D
 
 ### Codeerstijl
 
-Nog even de codeerstijl te overlopen:
+Nog even de basis codeerstijl te overlopen (rest volgt later misschien nog):
 
 ```java
 public MyClass{
@@ -56,15 +56,15 @@ public class ProgramParts {
 
 Er is maximaal één pakket declaratie en de onderdelen van de pakketnaam komen overeen met de folder structuur op schijf. Denk eraan dat de pakketnaam met uitsluitend kleine letters geschreven moet zijn. Indien deze declaratie wordt weggelaten wordt het standaard pakket ('default package') verondersteld. Net als voor de pakket declaratie, kan er maximaal één type gedeclareerd worden per klasse bestand. In tegenstelling tot deze declaraties, kunnen er meerdere import declaraties zijn, uiteraard.
 
-> In jouw VS Code IDE maak je een nieuwe Java toepassing aan met de opdracht `Java: Create Java Project`. Doe dit door op F1 te drukken en de opdrachtnaam op te geven. Tijdens het typen verschijnt er een keuzelijst met de opdracht. Gebeurt dit niet dan ontbreekt er misschien een VS Code extensie, kijk opnieuw de installatie na. Van het nieuwe project verwijder je de standaard package `app` in de `src` folder en maak je een nieuwe folder structuur aan die de bovenstaande pakketnaam volgt.
+> Oef Recap.1 [20 min]: In jouw VS Code IDE maak je een nieuwe Java toepassing aan met de opdracht `Java: Create Java Project`. Doe dit door op F1 of `ctrl + shift + P` te drukken en deze opdrachtnaam op te geven. Tijdens het typen verschijnt er een keuzelijst met de opdracht. Gebeurt dit niet dan ontbreekt er misschien een VS Code extensie, kijk opnieuw de installatie na. Van het nieuwe project verwijder je de standaard package `app` in de `src` folder en maak je een nieuwe folder structuur aan die de bovenstaande pakketnaam volgt.
 
-> Typ nu het bovenstaande programma manueel over in jouw VS Code IDE (zo krijg je snel weer Java in de vingers) en bewaar het bestand. Ga nu kijken naar de `bin` folder en als alles juist geïnstalleerd is zie dat VS Code de compilatie van broncode naar bytecode volautomatisch heeft uitgevoerd. Nu kan je de main methode uitvoeren en in de console verwacht je de zin `Hello world!` te zien verschijnen.
+> Typ nu het bovenstaande programma manueel over in jouw VS Code IDE (zo krijg je snel weer Java in de vingers) en bewaar het bestand. Ga nu kijken naar de `bin` folder. Als alles juist geïnstalleerd is zie dat VS Code de compilatie van broncode naar bytecode volautomatisch heeft uitgevoerd. Nu kan je de main methode uitvoeren en in de console verwacht je de zin `Hello world!` te zien verschijnen. Je kan de console/terminal/foutberichtvenster tonen en verbergen met de toets combinatie `ctrl + ù`.
 
 ![Role of the class loader](Java_Adv_1819_Recap/Class_Loader.svg)
 
 Je zou moeten weten dat het compileren van een `.java` bestand naar een `.class` bestand door `javac.exe` gebeurt en architectuur-onafhankelijk is. Het `.class` bestand bevat de zogenaamde *bytecode* en je kan deze zichtbaar maken door een decompiler te gebruiken (zie bijvoorbeeld de VS Code extentie `dgileadi.java-decompiler` of gebruik de met Java meegeleverde `jad.exe`).
 
-> Tracht zelf eens jouw net aangemaakte `.class` bestand te decompileren. Gebruik hiervoor `jad.exe` en werk vanuit het terminal paneel binnen VS Code. Probeer eens verscheidene uit.
+> Oef Recap.2 [20 min]: Tracht zelf eens jouw net aangemaakte `.class` bestand te decompileren. Gebruik hiervoor `jad.exe` en werk vanuit het terminal paneel binnen VS Code. Voer eerst eens gewoon `jad` op gebruik desnoods het volledige pad als dat niet lukt (`jad.exe` staat in de `bin` subfolder van jouw Java installatie folder). Je ziet dan de verscheidene parameters, lees de info en probeer er eens een paar uit.
 
 De tweede stap is het uitvoeren van de het `class`-bestand (niet te verwarren met het *klasse bestand* of *class file* dat hierboven reeds genoemd werd) door `java.exe`, de OS-afhankelijke software-matige implementatie van de JVM (*Java Virtual Machine*) die met jouw machine overeenkomt (je hebt inderdaad ook hardware-matige implementatie van de abstract JVM specificaties). Technisch gezien kan men zeggen dat de JVM een combinatie vormt van een stack machine, een register machine en een uitvoerings machine (*execution machine*). De JVM en de de Java API (Application Programming Interface) vormen samen het *Java platform* of *Java runtime system*.
 
@@ -90,7 +90,7 @@ De volgende sleutelwoorden zijn gereserveerd en mogen niet als variabele naam (*
  true      false     null
 ```
 
-> Bekijk de lijst van bovenstaande sleutelwoorden aandachtig. Probeer zelf eens een variabele te declareren met een van deze sleutelwoorden en bekijk de CT fout die daarop volgt. Onthou de fout en de oorzaak zodat je de volgende keer dat je deze fout tegenkomt (bijvoorbeeld op het examen) weet wat je te doen staat.
+> Oef Recap.3 [10 min]: Bekijk de lijst van bovenstaande sleutelwoorden aandachtig. Probeer zelf eens een variabele te declareren met een van deze sleutelwoorden en bekijk de CT fout die daarop volgt. Onthou de fout en de oorzaak zodat je de volgende keer dat je deze fout tegenkomt (bijvoorbeeld op het examen) weet wat je te doen staat.
 
 Merk op dat de laatste drie niet echte sleutelwoorden zijn in de strikte betekenis van het woord. Zo is `null` een waarde (*litteral value*) van het `null` referentie type net zoals `3` een waarde van het `int` primitief type is.
 
@@ -202,11 +202,11 @@ for ( int i = 1;; i++ ){
 
 Binnen `while`, `do while` en `for` constructies kan een `continue;` statement ervoor zorgen dat de executie wordt over gedragen naar de conditie-expressie of delta-expressie al naargelang de situatie.
 
-> Gebruik de bovenstaande constructies om rechtreeks vanuit een main methode de onderstaande correlatiematrix in de console af te drukken. Vertrek vanuit een twee-dimensionale array van het gepaste type. Druk eerste de matrix volledig af en druk daarna de onderste halve matrix af (enkel de waarden *onder* de diagonaal). Maak een versie die gebruik maakt van een gewone `for`-lus en eentje die van een `for each` gebruik maakt.
+> Oef Recap.3 [30 min]: Gebruik de bovenstaande constructies om rechtstreeks vanuit een main methode de onderstaande correlatiematrix in de console af te drukken (niet de lijntjes, enkel de kolom en rij hoofdingen en de inhoud van de matrix). Vertrek vanuit een twee-dimensionale array van het gepaste type. Druk eerste de matrix volledig af en druk daarna de onderste halve matrix af (enkel de waarden *onder* de diagonaal). Maak een versie die gebruik maakt van een gewone `for`-lus en eentje die van een `for each` gebruik maakt. Werk met arrays.
 
 ![Correlatiematrix](Java_Adv_1819_Recap/Corr_Matrix.svg)
 
-> Maak een `ChessBoard` klasse aan dat een schaakbord-patroon aanmaakt en afdrukt. De klasse heeft een constructor die een parameter `size` aanvaardt. Deze parameter bepaalt de grootte van het 'schaakbord'. Maak dan de methode `createBoard` die een twee-dimensionale array aanmaakt en bewaart in een objectvariabele `board`. Een tweede methode (`print`) drukt het schaakbord af gebruik makende van de characters `■` (code = `0x25A0`) en `□` (code = `0x25A1`) en van de opdracht `out.printf ( "%c ", /*code hier*/ )`. Een voorbeeld (`size=4`) staat hieronder:
+> Oef Recap.4 [30 min]: Maak een `ChessBoard` klasse aan dat een schaakbord-patroon aanmaakt en afdrukt. De klasse heeft een constructor die een parameter `size` aanvaardt. Deze parameter bepaalt de grootte van het 'schaakbord'. Maak dan de methode `createBoard` die een twee-dimensionale array aanmaakt en bewaart in een objectvariabele `board`. Een tweede methode (`print`) drukt het schaakbord af gebruik makende van de characters `■` (code = `0x25A0`) en `□` (code = `0x25A1`) en van de opdracht `out.printf ( "%c ", /*code hier*/ )`. Een voorbeeld (`size=4`) staat hieronder:
 
 ```
 □ ■ □ ■
@@ -391,7 +391,7 @@ public int sum (int a, int b){
 
 In dit voorbeeldje zijn `a` en `b` formele parameters (*formal parameters*). De term 'formeel' onderscheidt deze van de waarden die meegegeven worden bij het aanroepen van de methode, de actuele parameters (*actual parameters*). Bijvoorbeeld in `sum(t, 13)` zijn `t` en `13` actuele parameters. Gebruik het sleutelwoord `final` om aan te geven dat een formele parameter in de bijhorende methode niet mag gewijzigd worden (dit wordt dan bijvoorbeeld `final int a` in bovenstaand voorbeeld).
 
-> Denk aan jouw lievelings 'object' in de echte wereld, iets uit je eigen interesseveld, en vertaal dit naar een Java klasse. Voorbeelden kunnen zijn *Jetski*, *Dromedaris*, *SmartPhone*, *E-boek*. Denk na over wat voor methodes de klassen allemaal zou kunnen hebben. Probeer hieruit 2 methodes te kiezen die je `private` zou zetten en twee die `public` zou zetten. Zoek nu ook telkens twee object- en klasse variabelen die bij de klasse zouden kunnen horen. Implementeer de klasse en schrijf er een testklasse voor (`public class <klassenaam>Test`) met daarin een uitvoerbare methode die alle publieke methode uittest. Zorg dat elke methode iets naar de console wegschrijft.
+> Oef Recap.3 [45 min]: Denk aan jouw lievelings 'object' in de echte wereld, iets uit je eigen interesseveld, en vertaal dit naar een Java klasse. Voorbeelden kunnen zijn *Jetski*, *Dromedaris*, *SmartPhone*, *E-boek*. Denk na over wat voor methodes de klassen allemaal zou kunnen hebben. Probeer hieruit 2 methodes te kiezen die je `private` zou zetten en twee die `public` zou zetten. Zoek nu ook telkens twee object- en klasse variabelen die bij de klasse zouden kunnen horen. Implementeer de klasse en schrijf er een testklasse voor (`public class <klassenaam>Test`) met daarin een uitvoerbare methode die alle publieke methode uittest. Zorg dat elke methode iets naar de console wegschrijft.
 
 ### Overerving
 
@@ -408,13 +408,15 @@ Overerven (*extending*, *subclassing*) doe je door het `extends` sleutelwoord te
 | public final void notify/notifyAll() | Neen     | Neen       | Notificeert de/alle thread(s) in de wachtrij van het object.    |
 | public final void wait()             | Neen     | Neen       | Laat de thread wachten.                                         |
 
-> Voeg aan jouw lievelingsklasse dat je hierboven maakte een `toString` methode toe die de gelijknamige methode van de `Object` klasse overschrijft en voeg toe aan de bijhorende testklasse.
+> Voeg aan jouw lievelingsklasse dat je hierboven maakte een `toString` methode toe die de gelijknamige methode van de `Object` klasse overschrijft en voeg toe aan de bijhorende testklasse (i.e. `System.out.print ( mijnObject );`).
 
 ### Object-georiënteerd programmeren
 
 Het OO paradigma is ooit in het leven geroepen om programma's efficient onderhoudbaar te maken. Het plaatst het object centraal (ten opzichte van de acties centraal te zetten). Het omvat de principes van encapsulatie, overerving, polymorfisme en abstractie.
 
-Het is hier niet de plaats om OO (opnieuw) volledig uit de doeken te doen. De bedoeling om OO hier op te brengen is om te benadrukken dat OO een paradigma maar niet een vaste regel maar je halsstarrig aan moet proberen vast te klampen. OO mag nooit een doel op zich worden en dat geldt trouwens voor alle paradigma's. Gelukkig weten de meeste ontwikkelaars dit zeer goed. Ook in Java bestaan er erg veel structuren (zoals statics) die in feite de principes van OO tegenwerken. Bijvoorbeeld de Math klasse is alles behalve OO, net omdat hier de mathematische functies centraal staan en er abstractie van objecten wordt gemaakt. Een ander voorbeeld zijn het formatteren van tekst en datum variabelen zoals in `"p-value = %.4f"`. Uiteindelijk wordt de bytecode door JVM omgezet naar machine code en die is uiteraard ook alles behalve OO. 
+Het is hier niet de plaats om OO (opnieuw) volledig uit de doeken te doen. De bedoeling om OO hier op te brengen is om te benadrukken dat OO een paradigma maar niet een vaste regel maar je halsstarrig aan moet proberen vast te klampen. OO mag nooit een doel op zich worden en dat geldt trouwens voor alle paradigma's. Gelukkig weten de meeste ontwikkelaars dit zeer goed. Ook in Java bestaan er erg veel structuren (zoals statics) die in feite de principes van OO tegenwerken. Bijvoorbeeld de Math klasse is alles behalve OO, net omdat hier de mathematische functies centraal staan en er abstractie van objecten wordt gemaakt. Een ander voorbeeld zijn het formatteren van tekst en datum variabelen zoals in `"p-value = %.4f"`. Uiteindelijk wordt de bytecode door JVM omgezet naar machine code en die is uiteraard ook alles behalve OO.
+
+Tot hier het recapituleren van basis Java. We gaan nu meer geavanceerde topics aansnijden. Af en toe zullen we nog terug keren op onze stappen en even de basisch nog eens oprakelen. Dus, don't panic.
 
 ### Termen
 
