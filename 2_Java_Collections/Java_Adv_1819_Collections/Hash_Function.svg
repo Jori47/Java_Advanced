@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created on 2009-04-12 by Jorge Stolfi with the script make-hash-table-figure -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="254.07715"
+   height="201.39648"
+   id="fig"
+   font-style="normal"
+   font-weight="normal"
+   pagecolor="#ffff00"
+   pageopacity="0.0"
+   version="1.1"
+   sodipodi:docname="Hash_Function.svg"
+   style="font-style:normal;font-weight:normal;font-family:'Bitstream Courier';fill-opacity:1;fill-rule:evenodd;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata157">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs155">
+    <defs
+       id="defs40">
+      <!-- Start marker for non-null pointers: -->
+      <marker
+         orient="auto"
+         markerHeight="8"
+         markerWidth="8"
+         refY="4"
+         refX="4"
+         viewBox="0 0 8 8"
+         id="linkdot_N">
+        <circle
+           style="fill:#000000;stroke:#000000"
+           id="circle10"
+           r="3"
+           cy="4"
+           cx="4" />
+      </marker>
+      <!-- Start marker for null pointers: -->
+      <marker
+         orient="auto"
+         markerHeight="8"
+         markerWidth="8"
+         refY="4"
+         refX="4"
+         viewBox="0 0 8 8"
+         id="linkdot_U">
+        <line
+           style="stroke:#000000"
+           id="line13"
+           y2="7"
+           x2="7"
+           y1="1"
+           x1="1" />
+        <line
+           style="stroke:#000000"
+           id="line15"
+           y2="1"
+           x2="7"
+           y1="7"
+           x1="1" />
+      </marker>
+      <!-- Tip for arrows: -->
+      <marker
+         orient="auto"
+         markerHeight="8"
+         markerWidth="14"
+         refY="4"
+         refX="13"
+         viewBox="0 0 14 8"
+         id="arrowtip_N">
+        <polygon
+           style="fill:#000000;stroke:#000000"
+           id="polygon18"
+           points="13,4 1,7 1,4 1,1 " />
+      </marker>
+      <!-- Tip for highlighted arrows: -->
+      <marker
+         orient="auto"
+         markerHeight="8"
+         markerWidth="14"
+         refY="4"
+         refX="13"
+         viewBox="0 0 14 8"
+         id="arrowtip_C">
+        <polygon
+           style="fill:#cc0000;stroke:#cc0000"
+           id="polygon21"
+           points="13,4 1,7 1,4 1,1 " />
+      </marker>
+      <!-- Key box in input column, normal: -->
+      <rect
+         style="fill:#00ffff;stroke:none;stroke-width:0px"
+         height="20"
+         width="90"
+         x="0"
+         y="0"
+         id="key_box_N" />
+      <!-- Key box in input column, highlighted : -->
+      <rect
+         style="fill:#00ffff;stroke:none;stroke-width:0px"
+         height="20"
+         width="90"
+         x="0"
+         y="0"
+         id="key_box_C" />
+      <!-- Key box in bucket or overflow columns, normal: -->
+      <rect
+         style="fill:#9cff9c;stroke:#000000"
+         height="20"
+         width="90"
+         x="0"
+         y="0"
+         id="key_box_E" />
+      <!-- Key box in bucket or overflow columns, vacant: -->
+      <rect
+         style="fill:#ddeedd;stroke:#000000"
+         height="20"
+         width="90"
+         x="0"
+         y="0"
+         id="key_box_U" />
+      <!-- Value box in bucket or overflow columns, occupied: -->
+      <rect
+         style="fill:#9cff9c;stroke:#000000"
+         height="20"
+         width="80"
+         x="0"
+         y="0"
+         id="val_box_E" />
+      <!-- Value box in bucket or overflow columns, vacant: -->
+      <rect
+         style="fill:#ddeedd;stroke:#000000"
+         height="20"
+         width="80"
+         x="0"
+         y="0"
+         id="val_box_U" />
+      <!-- Pointer box in bucket or overflow columns, used and non-null: -->
+      <rect
+         style="fill:#9cff9c;stroke:#000000"
+         height="20"
+         width="20"
+         x="0"
+         y="0"
+         id="ptr_box_E" />
+      <!-- Pointer box in bucket or overflow columns, null/vacant: -->
+      <rect
+         style="fill:#ddeedd;stroke:#000000"
+         height="20"
+         width="20"
+         x="0"
+         y="0"
+         id="ptr_box_U" />
+      <!-- Background for hash value, unused: -->
+      <rect
+         style="fill:#ddeedd;stroke:none;stroke-width:0px"
+         height="18"
+         width="24"
+         y="1"
+         x="3"
+         id="hsh_box_U" />
+      <!-- Background for hash value, used: -->
+      <rect
+         style="fill:#a8a8ff;stroke:none;stroke-width:0px"
+         height="18"
+         width="24"
+         y="1"
+         x="3"
+         id="hsh_box_N" />
+      <!-- Background for hash value, highlighted: -->
+      <rect
+         style="fill:#ee4444;stroke:none;stroke-width:0px"
+         height="18"
+         width="24"
+         y="1"
+         x="3"
+         id="hsh_box_C" />
+      <!-- Vertical dots: -->
+      <g
+         id="vdots">
+        <rect
+           id="rect35"
+           height="2"
+           width="2"
+           y="6"
+           x="0" />
+        <rect
+           id="rect37"
+           height="2"
+           width="2"
+           y="12"
+           x="0" />
+      </g>
+    </defs>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview153"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="2.607072"
+     inkscape:cx="131.06522"
+     inkscape:cy="111.80338"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="fig" />
+  <text
+     x="140"
+     y="11.396484"
+     font-size="15px"
+     font-weight="bold"
+     id="text42"
+     style="font-weight:bold;font-size:15px;text-anchor:middle;fill:#ffffff;stroke:none;stroke-width:0px;">hash</text>
+  <text
+     x="140"
+     y="31.396484"
+     font-size="15px"
+     font-weight="bold"
+     id="text44"
+     style="font-weight:bold;font-size:15px;text-anchor:middle;fill:#ffffff;stroke:none;stroke-width:0px;">function</text>
+  <rect
+     x="105"
+     y="41.396484"
+     width="70"
+     height="160"
+     id="rect46"
+     style="font-size:medium;text-anchor:middle;fill:#aaeecc;stroke:none;stroke-width:0px" />
+  <text
+     x="45"
+     y="31.396484"
+     font-size="15px"
+     font-weight="bold"
+     id="text48"
+     style="font-weight:bold;font-size:15px;text-anchor:middle;fill:#ffffff;stroke:none;stroke-width:0px;">keys</text>
+  <g
+     style="font-size:medium;text-anchor:middle"
+     transform="translate(0,51.396484)"
+     id="g60">
+    <use
+       xlink:href="#key_box_C"
+       id="use50"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       x="45"
+       y="14"
+       id="text52"
+       style="stroke:none;stroke-width:0px">John Smith</text>
+    <line
+       x1="97"
+       y1="10"
+       x2="110"
+       y2="10"
+       id="line54"
+       style="stroke:#dd0000" />
+    <line
+       x1="110"
+       y1="10"
+       x2="170"
+       y2="40"
+       id="line56"
+       style="stroke:#dd0000" />
+    <line
+       x1="170"
+       y1="40"
+       x2="210"
+       y2="40"
+       id="line58"
+       style="stroke:#dd0000;marker-end:url(#arrowtip_C)" />
+  </g>
+  <use
+     style="font-size:medium;text-anchor:middle"
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     id="use62"
+     xlink:href="#key_box_N"
+     transform="translate(0,91.396484)" />
+  <text
+     style="font-size:medium;text-anchor:middle;stroke:none;stroke-width:0px"
+     id="text64"
+     y="105.39648"
+     x="45">Lisa Smith</text>
+  <line
+     style="font-size:medium;text-anchor:middle;stroke:#999999;fill:#ffff00"
+     id="line66"
+     y2="101.39648"
+     x2="110"
+     y1="101.39648"
+     x1="97" />
+  <line
+     style="font-size:medium;text-anchor:middle;stroke:#999999;fill:#000000"
+     id="line68"
+     y2="71.396484"
+     x2="170"
+     y1="101.39648"
+     x1="110" />
+  <line
+     style="font-size:medium;text-anchor:middle;stroke:#999999;marker-end:url(#arrowtip_N);fill:#ff0000"
+     id="line70"
+     y2="71.396484"
+     x2="210"
+     y1="71.396484"
+     x1="170" />
+  <use
+     style="font-size:medium;text-anchor:middle"
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     id="use74"
+     xlink:href="#key_box_N"
+     transform="translate(0,131.39648)" />
+  <text
+     style="font-size:medium;text-anchor:middle;stroke:none;stroke-width:0px"
+     id="text76"
+     y="145.39648"
+     x="45">Sam Doe</text>
+  <line
+     style="font-size:medium;text-anchor:middle;stroke:#999999"
+     id="line78"
+     y2="141.39648"
+     x2="110"
+     y1="141.39648"
+     x1="97" />
+  <line
+     style="font-size:medium;text-anchor:middle;stroke:#999999"
+     id="line80"
+     y2="131.39648"
+     x2="170"
+     y1="141.39648"
+     x1="110" />
+  <line
+     style="font-size:medium;text-anchor:middle;stroke:#999999;marker-end:url(#arrowtip_N)"
+     id="line82"
+     y2="131.39648"
+     x2="210"
+     y1="131.39648"
+     x1="170" />
+  <g
+     style="font-size:medium;text-anchor:middle"
+     transform="translate(0,171.39648)"
+     id="g96">
+    <use
+       xlink:href="#key_box_C"
+       id="use86"
+       x="0"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       x="45"
+       y="14"
+       id="text88"
+       style="stroke:none;stroke-width:0px">Sandra Dee</text>
+    <line
+       x1="97"
+       y1="10"
+       x2="110"
+       y2="10"
+       id="line90"
+       style="stroke:#dd0000" />
+    <line
+       x1="110"
+       y1="10"
+       x2="170"
+       y2="-80"
+       id="line92"
+       style="stroke:#dd0000" />
+    <line
+       x1="170"
+       y1="-80"
+       x2="210"
+       y2="-80"
+       id="line94"
+       style="stroke:#dd0000;marker-end:url(#arrowtip_C)" />
+  </g>
+  <text
+     x="225"
+     y="31.396484"
+     font-size="15px"
+     font-weight="bold"
+     id="text100"
+     style="font-weight:bold;font-size:15px;text-anchor:middle;fill:#ffffff;stroke:none;stroke-width:0px;">hashes</text>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#1a1a1a"
+     id="g106"
+     transform="translate(210,41.396484)">
+    <use
+       style="fill:#1a1a1a"
+       x="0"
+       xlink:href="#hsh_box_U"
+       id="use102"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       style="fill:#1a1a1a"
+       x="15"
+       y="14"
+       id="text104">00</text>
+  </g>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#1a1a1a"
+     transform="translate(210,61.396484)"
+     id="g112">
+    <use
+       style="fill:#1a1a1a"
+       x="0"
+       xlink:href="#hsh_box_N"
+       id="use108"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       style="fill:#1a1a1a"
+       x="15"
+       y="14"
+       id="text110">01</text>
+  </g>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#1a1a1a"
+     transform="translate(210,81.396484)"
+     id="g118">
+    <use
+       style="fill:#1a1a1a"
+       x="0"
+       xlink:href="#hsh_box_C"
+       id="use114"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       style="fill:#1a1a1a"
+       x="15"
+       y="14"
+       id="text116">02</text>
+  </g>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#1a1a1a"
+     transform="translate(210,101.39648)"
+     id="g124">
+    <use
+       style="fill:#1a1a1a"
+       x="0"
+       xlink:href="#hsh_box_U"
+       id="use120"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       style="fill:#1a1a1a"
+       x="15"
+       y="14"
+       id="text122">03</text>
+  </g>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#1a1a1a"
+     transform="translate(210,121.39648)"
+     id="g130">
+    <use
+       style="fill:#1a1a1a"
+       x="0"
+       xlink:href="#hsh_box_N"
+       id="use126"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       style="fill:#1a1a1a"
+       x="15"
+       y="14"
+       id="text128">04</text>
+  </g>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#1a1a1a"
+     transform="translate(210,141.39648)"
+     id="g136">
+    <use
+       style="fill:#1a1a1a"
+       x="0"
+       xlink:href="#hsh_box_U"
+       id="use132"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       style="fill:#1a1a1a"
+       x="15"
+       y="14"
+       id="text134">05</text>
+  </g>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#ffffff"
+     transform="translate(210,161.39648)"
+     id="g140">
+    <text
+       x="15"
+       y="14"
+       font-weight="bold"
+       id="text138"
+       style="font-weight:bold;fill:#ffffff">:</text>
+  </g>
+  <g
+     style="font-size:medium;text-anchor:middle;fill:#1a1a1a"
+     transform="translate(210,181.39648)"
+     id="g146">
+    <use
+       style="fill:#1a1a1a"
+       x="0"
+       xlink:href="#hsh_box_U"
+       id="use142"
+       y="0"
+       width="100%"
+       height="100%" />
+    <text
+       style="fill:#1a1a1a"
+       x="15"
+       y="14"
+       id="text144">15</text>
+  </g>
+</svg>
