@@ -4,7 +4,7 @@
 
 In Java Advanced worden geavanceerde topics geïntroduceerd. Deze Java Recap dient in de eerste plaats om kort een aantal basishandelingen in Java op te frissen. De meeste ideeën in dit onderdeel kan je terug vinden in het boek: *Beginning Java 8 Fundamentals* van (2014) van Kishori Sharan<sup>1</sup>.
 
-![Beginning Java 8 Fundamentals](Java_Adv_1819_Recap/Sharan_01.jpg)
+![](Sharan_01.jpg)
 
 Dit boek is voor AP studenten gratis downloadbaar via UA bibliotheken. Op https://start.ap.be/ kies je voor *Bibliotheek en databanken* en daarna voor *Catalogus en online diensten* waar je zoekt op `Sharan Java`. Je merkt dat dit boek een eerste van een trilogie is met als ander titels *Beginning Java 8 Language Features* en *Java 8 APIs, Extensions and Libraries*. Deze boeken zijn eveneens gratis downloadbaar en komen in andere colleges nog aan bod. De drie boeken uit de trilogie kan je downloaden door op de webpagina met de zoekresultaten van de catalogus telkens op het boek te klikken en dan de link te klikken naast *E-Info*. Je komt dan op een webpagina van SpringerLink terecht waar je het boek in zijn geheel of hoofdstuk-per-hoofdstuk kan downloaden in 2 verschillende formaten. De broncode kan je van [github](https://github.com/apress/beg-java-8-fundamentals) downloaden.
 
@@ -18,7 +18,7 @@ Sommigen zullen hier misschien een 'Jip en Janneke'-schrijfstijl in herkennen. H
 
 Je hebt uiteraard het internet ter beschikking als je met bepaalde vragen zit. Daar kan je allerhande fora raadplegen op zoek naar iemand die een gelijkaardige vraag wist te beantwoorden. Toch is dat niet voldoende. Wil je je als Java ontwikkelaar respecteren, dan moet je echter ook goed je weg kunnen vinden in de officiële documentatie. Voor versie JDK11 kan je terecht op de [documentatie van Oracle](https://docs.oracle.com/en/java/javase/11/docs/api/index.html). Nog een goede raad. Je zal heel wat waarschuwingen en foutboodschappen te zien krijgen zoals de `NumberFormatException` of de `NullPointerException`, voornamelijk gegenereerd door `javac.exe`. Probeer elke nieuwe fout die je tegenkomt op te zoeken.
 
-![Beginning Java 8 Fundamentals](Java_Adv_1819_Recap/Doc.jpg)
+![Beginning Java 8 Fundamentals](Doc.jpg)
 
 ### Codeerstijl
 
@@ -60,7 +60,7 @@ Er is maximaal één pakket declaratie en de onderdelen van de pakketnaam komen 
 
 > Typ nu het bovenstaande programma manueel over in jouw VS Code IDE (zo krijg je snel weer Java in de vingers) en bewaar het bestand. Ga nu kijken naar de `bin` folder en als alles juist geïnstalleerd is zie dat VS Code de compilatie van broncode naar bytecode volautomatisch heeft uitgevoerd. Nu kan je de main methode uitvoeren en in de console verwacht je de zin `Hello world!` te zien verschijnen.
 
-![Role of the class loader](Java_Adv_1819_Recap/Class_Loader.svg)
+![Role of the class loader](Class_Loader.svg)
 
 Je zou moeten weten dat het compileren van een `.java` bestand naar een `.class` bestand door `javac.exe` gebeurt en architectuur-onafhankelijk is. Het `.class` bestand bevat de zogenaamde *bytecode* en je kan deze zichtbaar maken door een decompiler te gebruiken (zie bijvoorbeeld de VS Code extentie `dgileadi.java-decompiler` of gebruik de met Java meegeleverde `jad.exe`).
 
@@ -204,7 +204,7 @@ Binnen `while`, `do while` en `for` constructies kan een `continue;` statement e
 
 > Gebruik de bovenstaande constructies om rechtreeks vanuit een main methode de onderstaande correlatiematrix in de console af te drukken. Vertrek vanuit een twee-dimensionale array van het gepaste type. Druk eerste de matrix volledig af en druk daarna de onderste halve matrix af (enkel de waarden *onder* de diagonaal). Maak een versie die gebruik maakt van een gewone `for`-lus en eentje die van een `for each` gebruik maakt.
 
-![Correlatiematrix](Java_Adv_1819_Recap/Corr_Matrix.svg)
+![Correlatiematrix](Corr_Matrix.svg)
 
 > Maak een `ChessBoard` klasse aan dat een schaakbord-patroon aanmaakt en afdrukt. De klasse heeft een constructor die een parameter `size` aanvaardt. Deze parameter bepaalt de grootte van het 'schaakbord'. Maak dan de methode `createBoard` die een twee-dimensionale array aanmaakt en bewaart in een objectvariabele `board`. Een tweede methode (`print`) drukt het schaakbord af gebruik makende van de characters `■` (code = `0x25A0`) en `□` (code = `0x25A1`) en van de opdracht `out.printf ( "%c ", /*code hier*/ )`. Een voorbeeld (`size=4`) staat hieronder:
 
@@ -292,7 +292,7 @@ In java bestaan er de volgende toegankelijkheidsniveaus:
 - `public`: toegankelijk buiten het pakket
 - `protected`: toegankelijk binnen pakket en alle subklassen
 
-![Toegankelijkheidsniveaus](Java_Adv_1819_Recap/Access.svg)
+![Toegankelijkheidsniveaus](Access.svg)
 
 Om effectief toegang te krijgen to de nodige types kan het natuurlijk zijn dat je een `import` statement moet invoegen. Denk er dan aan dat expliciete imports (*single-type imports*) altijd beter zijn en de voorkeur krijgt t.o.v. het gebruik van een filter mask als in `java.lang.*` (*on-demand imports*). Voor het importeren van statische variabelen of methoden van types kan je een statische import gebruiken (e.g. `import static java.lang.System.out;` en `import static java.lang.Math.*;`). 
 
