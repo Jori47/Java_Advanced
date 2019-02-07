@@ -62,7 +62,7 @@ Er is maximaal één pakket declaratie en de onderdelen van de pakketnaam komen 
 
 ![Role of the class loader](Java_Adv_1819_Recap/Class_Loader.svg)
 
-Je zou moeten weten dat het compileren van een `.java` bestand naar een `.class` bestand door `javac.exe` gebeurt en architectuur-onafhankelijk is. Het `.class` bestand bevat de zogenaamde *bytecode* en je kan deze zichtbaar maken door een decompiler te gebruiken (zie bijvoorbeeld de VS Code extentie `dgileadi.java-decompiler` of gebruik de met Java meegeleverde `jad.exe`).
+Je zou moeten weten dat het compileren van een `.java` bestand naar een `.class` bestand door `javac.exe` gebeurt en architectuur-onafhankelijk is. Het `.class` bestand bevat de zogenaamde *bytecode* en je kan deze zichtbaar maken door een decompiler te gebruiken (zie bijvoorbeeld de VS Code extensie `dgileadi.java-decompiler` of gebruik de met Java meegeleverde `jad.exe`).
 
 > Oef Recap.2 [20 min]: Tracht zelf eens jouw net aangemaakte `.class` bestand te decompileren. Gebruik hiervoor `jad.exe` ([Hier](http://www.javadecompilers.com/jad) kan je die vinden) en werk vanuit het terminal paneel binnen VS Code. Voer eerst eens gewoon `jad` op gebruik desnoods het volledige pad als dat niet lukt (`jad.exe` staat in de `bin` subfolder van jouw Java installatie folder). Je ziet dan de verscheidene parameters, lees de info en probeer er eens een paar uit.
 
