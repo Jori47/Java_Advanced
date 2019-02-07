@@ -72,6 +72,7 @@ Op Digitap staat een boek vermeld: Sierra K en Bates B (2005)<sup>1</sup>. Dit b
 - Er wordt aangeraden om jezelf wegwijs te maken in VS Code via een aantal [Introductie video's](https://code.visualstudio.com/docs/getstarted/introvideos)
 - Volg [deze instructies](https://code.visualstudio.com/docs/languages/java) en installeer de [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
 - Volg [deze instructies](https://code.visualstudio.com/docs/java/java-tutorial) om Java te koppelen met VS Code
+- Download deze cursus via de terminal (open de terminal via `ctrl + ù`) met de opdracht `git clone https://github.com/ddhaese/Java_Advanced`
 
 ### Examen (onder voorbehoud)
 
