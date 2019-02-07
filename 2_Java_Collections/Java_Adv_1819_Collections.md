@@ -198,7 +198,7 @@ int a = n.intValue();
 
 Als alles toch in de achtergrond gebeurt, moet de ontwikkelaar zich hier niet mee bekommeren, toch? Niet waar, je zal later merken dat je met het boxing/unboxing verhaal nog vaak rekening zult moeten houden en het is cruciaal dat je van deze stap op de hoogte bent.
 
-### ArrayList - First encounter
+### ArrayList - First Encounter
 
 In onderstaande code wordt een ArrayList object geïnstantieerd worden met één enkele waarde, het getal 101 en wordt dit getal daarna terug uitgelezen:
 
@@ -384,7 +384,7 @@ Over generics kan nog veel meer verteld worden.
 >  Oef Coll.4 [45 min]: Maak een generieke klasse `KeyValues` die zogenaamde [key-value pairs](https://en.wikipedia.org/wiki/Key-value_database) bijhoudt. Initialisatie gebeurt door middel van twee arrays. Een getter geeft de value terug op basis van een key. Denk na over de toegelaten types.
 >  Oef Coll.5 [45 min]: Maak een generieke klasse `Ontology` waarin objecten met elkaar geassocieerd kunnen worden. De initialisatie van dit semantisch web gebeurt aan de hand van een array van objecten. Daarna kan de ontxikkelaar gebruik maken van de methode `link ( object A, object B, Link L )` waarbij L een instantie is van de zelf aan te maken klasse Link of een object dat daar van overerft. Schrijft een `toString()` voor deze klasse die mooi alle relaties binnen de ontologie afdrukt.
 
-### Overzicht verschillende container klassen
+### Overzicht Container Klassen
 
 [&hellip;]
 
