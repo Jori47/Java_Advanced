@@ -17,15 +17,15 @@ out.println ( "The answer is " +
 	((Objects.hash(lisa) != Objects.hash(ahmed)) ? "No." : "Maybe."));
 ```
 
-> Oef Coll.1 [30 min]: In de Recap namespace, probeer de `hashCode` en `hash` methodes eens aan te roepen en kijk naar het resultaat. Probeer ook eens meerdere instanties van eenzelfde klasse te creëren, zoals hierboven, en vergelijk hun codes.
+> Oef Coll.1
 
 Vele programmeurs denken dat een hash code een unieke code is die een bepaald object voorstelt. Dat is dus niet waar. Kijk bijvoorbeeld naar deze figuur uit het engelstalig Wikipedia artikel voor *hash function*:
 
-![Wikipedia Hash Function](Java_Adv_1819_Collections/Hash_Function.svg "Hash function")
+![Wikipedia Hash Function](Java_Adv_1819_Collections/Hash_Function2.png "Hash function")
 
-Merk op dat er twee verschillende namen de hash `02` hebben (rode pijlen). Daarom dat er in bovenstaande code "Maybe" stond. Indien de hashes van twee objecten verschillen, dan weet men zeker dat de objecten ook echt verschillend zijn. Indien de hashes hetzelfde zijn, kan men geen uitspraak doen. Bij de meeste hashed collections zal de kans erg klein zijn dat twee dezelfde hashes afkomstig zijn van verschillende objecten maar die kans hoeft niet per sé nul te zijn om een geldige hashed collection te zijn en hoe groot die kans precies is hangt af van de implementatie. De ingebouwde hash functies van Java zijn gebaseerd op de geheugenplaats van het object waarnaar verwezen wordt. De kans is dus in principe onbestaande dat twee dezelfde hashes afkomstig zijn van twee verschillende objecten.
+Merk op dat er twee verschillende namen de hash `02` hebben (rode pijlen). Daarom dat er in bovenstaande code `"Maybe"` stond. Indien de hashes van twee objecten verschillen, dan weet men zeker dat de objecten ook echt verschillend zijn. Indien de hashes hetzelfde zijn, kan men geen uitspraak doen. Bij de meeste hashed collections zal de kans erg klein zijn dat twee dezelfde hashes afkomstig zijn van verschillende objecten maar die kans hoeft niet per sé nul te zijn om een geldige hashed collection te zijn en hoe groot die kans precies is hangt af van de implementatie. De ingebouwde hash functies van Java zijn gebaseerd op de geheugenplaats van het object waarnaar verwezen wordt. De kans is dus in principe onbestaande dat twee dezelfde hashes afkomstig zijn van twee verschillende objecten.
 
-Je kan zelf de `hashCode` methode overschrijven. Waarom zou je zoiets doen? Het probleem van ingebouwde hash code is dat ze beperkt zijn in hun gebruik. Door hashes te gebruiken kan je (soms) te weten komen of twee objecten verschillend zijn. Als de hashes van twee objecten verschillen weet je zeker dat de objecten verschillen. Maar wat betekent het eigenlijk om te verschillen? Kijk bijvoorbeeld naar deze code: 
+Je kan zelf de `hashCode` methode overschrijven. Waarom zou je zoiets doen? Het probleem van ingebouwde hash code is dat ze beperkt zijn in hun gebruik. Door hashes te gebruiken kan je (soms) te weten komen of twee objecten verschillend zijn. Als de hashes van twee objecten verschillen weet je zeker dat de objecten verschillen. Maar wat betekent het eigenlijk om te verschillen? Kijk bijvoorbeeld naar deze code uit Oef Coll.1:
 
 ```java
 Human human1 = new Human ( "Lisa", "female" );
@@ -36,7 +36,7 @@ out.println ( "The answer is " +
 	((Objects.hash(human1) != Objects.hash(human2)) ? "No." : "Maybe."));
 ```
 
-Voor zover de klasse `Human` gedefinieerd is (door middel van naam en geslacht) lijken `human1` en `human2` hetzelfde object terwijl het resultaat van de bovenstaande code toch iets anders vertelt. Dat heeft natuurlijk te maken de ingebouwde hash functies die, tegen beter weten in, zich baseren op de geheugenplaats van het overeenkomstig object. Ook de standaard implementatie van de `equals` methode op de `Object` klasse baseert zich op de geheugenplaats waar de referentietypes (die zich als pointers gedragen) naar verwijzen (voor meer info rond zie Sharan (2014)<sup>1</sup> p.285.):
+Voor zover de klasse `Human` gedefinieerd is (door middel van naam en geslacht) lijken `human1` en `human2` hetzelfde object terwijl het resultaat van de bovenstaande code toch iets anders vertelt. Dat heeft natuurlijk te maken met de ingebouwde hash functies die, tegen beter weten in, zich baseren op de geheugenplaats van het overeenkomstig object. Ook de standaard implementatie van de `equals` methode op de `Object` klasse baseert zich op de geheugenplaats waar de referentietypes (die zich als pointers gedragen) naar verwijzen (voor meer info rond zie Sharan (2014)<sup>1</sup> p.285.):
 
 ```java
 // Vereenvoudigde weergave
@@ -121,8 +121,6 @@ public class SmartPointTest {
 
 Merk op dat in dit voorbeeld dat `equals` en `hashCode` beiden gebaseerd zijn op zowel de `x` als de `y` coördinaat.
 
-> Oef Coll.2 [10 min]: Hover in de VS Code editor eens over de hash en hashCode functies en lees wat er staat. Probeer de raad en voorbeeld die bij de hash functie staan op te volgen. 
-
 Merk uit bovenstaand voorbeeld ook op dat `equals` en `hashCode` beantwoorden aan de volgende regel bij het vergelijken van twee objecten `A` en `B`, letterlijk overgenomen van <sup>1</sup> (met andere namen om verwarring te vermijden):
 
 <center style="width:60%;margin:auto;">"If A.equals(B) returns true, A.hashCode() must return the same value as B.hashCode(). That is, if two objects are equal according to the equals() method, they must have the same hash code values returned from their hashCode() methods. However, the opposite may not be true. If two objects have the same hash codes, that does not imply that they must be equal according to the equals() method. That is, if A.hashCode() is equal to B.hashCode(), that does not imply that A.equals(B) will return true." — Sharan 2014<sup>1</sup>, p. 294</center>
@@ -137,7 +135,7 @@ Laten we nog even teruggrijpen naar het voorbeeld van Lisa en Ahmed. Wat als we 
 
  $$d=\sqrt{\Delta x^2+\Delta y^2+\Delta z^2}$$
 
-> Oef Coll.3 [120 min]: Maak een klasse `Point` dat voor de coördinaten de publieke object variabelen `x`, `y` en `z` definieert. Het bereik van de coördinaatwaarden (type `float`) is beperkt in het gebied [0, 9.5[. Overschrijf de `hashCode` methode zodat het resulteert in een natuurlijk getal van 0 tot 999, waarbij elke cijfer een afronding is van het overeenkomstig coördinaat. Schrijf nu een test methode waarbij er `10_000` punten worden gegenereerd met coördinaten willekeurig (en uniform) verdeeld over het toegelaten gebied. Bewaar de gegenereerde punten in een array. Gebruik nu het resultaat van `hashCode()` om de afstand te berekenen tussen twee willekeurig gekozen punten uit de lijst en herhaal dit `n`-aantal keren waarbij `n` als constante gedefinieerd staat in jouw `main` methode.
+> Oef Coll.2
 
 ### Wrapper classes
 
@@ -165,7 +163,7 @@ byte myByte = intObject.byteValue();
 double myDouble = intObject.doubleValue();
 ```
 
-Algemeen kan men de `valueOf()` *factory* methoden gebruiken voor het converteren van één numeriek type naar een ander en `parse<type hier>()` methoden voor het extraheren van numerieke types uit `String` objecten. Pas daar wel goed mee op en test uw code altijd grondig bij het parsen vanuit tekst! Bijvoorbeeld (maar er zijn er talloze!):
+Algemeen kan men de `valueOf()` *factory* methoden gebruiken voor het converteren van één numeriek type naar een ander en `parse<type hier>()` methoden voor het extraheren van numerieke types uit `String` objecten. Pas daar wel goed mee op en test uw code altijd grondig bij het parsen vanuit tekst! Bijvoorbeeld (maar er zijn talloze andere voorbeelden!):
 
 ```java
 System.out.println("Parsing ' true': " + Boolean.parseBoolean(" true"));
@@ -198,7 +196,7 @@ int a = n.intValue();
 
 Als alles toch in de achtergrond gebeurt, moet de ontwikkelaar zich hier niet mee bekommeren, toch? Niet waar, je zal later merken dat je met het boxing/unboxing verhaal nog vaak rekening zult moeten houden en het is cruciaal dat je van deze stap op de hoogte bent.
 
-### ArrayList - First Encounter
+### Boxing
 
 In onderstaande code wordt een ArrayList object geïnstantieerd worden met één enkele waarde, het getal 101 en wordt dit getal daarna terug uitgelezen:
 
@@ -331,6 +329,7 @@ String mystring = unknownWrapper.get();
 // CT fout: [Java] Type mismatch: cannot convert from capture#1-of ? to String [16777233]
 Object obj = unknownWrapper.get(); // OK
 ```
+
 Dit kan nuttig zijn indien men een bepaalde generic doorgeven van A over B naar C waarbij A en C wel willen weten wat er in de generic zit maar dat B daar eingelijk geen zaken mee heeft (denk aan een pakjes dienst).
 
 ![](https://www.freightcowboy.com/site/wp-content/uploads/2018/06/Parcel-Service-Failure.jpg)
@@ -381,12 +380,207 @@ String str = sWrapper.get(); // #3 - RT fout: ClassCastException
 Het proces waarbij de compiler deze generics concretiseert noemt men *erasure*.
 Over generics kan nog veel meer verteld worden. 
 
->  Oef Coll.4 [45 min]: Maak een generieke klasse `KeyValues` die zogenaamde [key-value pairs](https://en.wikipedia.org/wiki/Key-value_database) bijhoudt. Initialisatie gebeurt door middel van twee arrays. Een getter geeft de value terug op basis van een key. Denk na over de toegelaten types.
->  Oef Coll.5 [45 min]: Maak een generieke klasse `Ontology` waarin objecten met elkaar geassocieerd kunnen worden. De initialisatie van dit semantisch web gebeurt aan de hand van een array van objecten. Daarna kan de ontxikkelaar gebruik maken van de methode `link ( object A, object B, Link L )` waarbij L een instantie is van de zelf aan te maken klasse Link of een object dat daar van overerft. Schrijft een `toString()` voor deze klasse die mooi alle relaties binnen de ontologie afdrukt.
+>  Oef Coll.4 & 5
 
-### Overzicht Container Klassen 
+### Het Collections Framework
 
-[&hellip;]
+Hieronder is een overzicht van een aantal veelgebruikte container klassen met hun eigenschappen. Merk op dat enumeraties buiten het Collections Framework vallen.
+
+|Klasse|Omschrijving|Sommige methoden|
+|-|-|-|
+|`Enum`|Bevat een geordende lijst constanten.|`.ordinal()`, `.toString()`, `range()`, `allOf()`, `complementOf()`|
+|`Array`|Bevat 0 tot $2^{31}$ geïndexeerde waarden van hetzelfde type (zowel primitieve als referentie types). Na declaratie kan de lengte van van een Array niet dynamisch aangepast worden. Multidimensioneel, gekarteld (*jagged*) of compleet.|`System.arraycopy()`, `.length()`, `binarySearch()`, `fill()`, `sort()`|
+|`ArrayList`|Idem als `Array` maar 1-dimensionaal en dynamisch aanpasbaar. Werkt enkel op referentie types. Heeft uitgewerkte `toString()`. Niet thread safe maar sneller dan `Vector`.|`.size()`, `.add()`, `.remove()`, `.get()`, `.clear()`, `.contains()`, `subList()`, &hellip;|
+|`Vector`|Idem als `ArrayList` maar thread safe en trager.|Idem als `ArrayList`|
+|`LinkedList`|Veelzijdige klasse, zowel `List` als `Queue` als `DeQue`. Is ook iets sneller dan `ArrayList` in het toevoegen/verwijderen van elementen in het midden van de lijst.|Zie `List`, `Queue` en `Deque`.|
+|`HashSet`|Implementatie van een wiskundige set, de volgorde speelt geen rol en waarden kunnen niet gedupliceerd worden.|Set operaties met `removeAll()`, `retainAll()` etc&hellip; + maak unmutable versie met `Collections.unmodifiableSet()`|
+|`LinkedHashSet`|`HashSet` waarbij volgorde tijdens iteratie overeenkomt met volgorde insertie (*insertion order*).|Idem `HashSet`|
+|`TreeSet`|Implementatie van de `sortedSet` en `NavigableSet` interfaces, een `Set` waarbij waarde worden gesorteerd tijdens het opladen (via `compareTo()` van meegeleverde `Comparator`).|Idem `HashSet` maar met extra `subset()`, `headSet()` en `tailSet()`, `lower()`, `ceiling()`, &hellip;.|
+|`Queue`|Een lijst waarvan de elementen één voor één afgehandeld worden. Volgt in principe FIFO regel. Er is geen index en geen sortering.|`add()`, `offer()`, `remove()`, `poll()`, `element()`, `peek()`|
+|`PriorityQueue`|Een `Queue` waarbij elke element een prioriteit heeft die bepaald welk element er vervolgens wordt vrijgegeven.|Idem.|
+|`BlockingQueue`|Een `Queue` voor multi-threaded toepassingen, zie ook `Transferqueue`.|Idem + `put()`, `take()`.|
+|`Deque`|(uitgespr. als 'dek') Een double-ended queue. Kan stack (LIFO principe) voorstellen en moet voorkeur dragen boven de `java.util.Stack` klasse die volgens Sharan gewoonweg slecht ontworpen werd. Minder performant dan `LinkedList` voor FIFO operaties.|`getFirst()`, `offerLast()`, `pop()`, `push()`|
+|`HashMap`|Voor zogenaamde Key value mappings of ook 'dictionaries'. De sleutelwaarden moeten uiteraard uniek zijn. Geen sortering.|`containsKey()`, `containsValue()`, `get()`, `put()`, `putIfAbsent()`, `replace()`, `keySet()`, `values()`, `entrySet()`|
+|`TreeMap`|Hashmap met sortering en het terugvinden van gelijkaardige sleutelwaarden.|Idem + `subMap()`, `firstKey()`, `lastEntry()`, `lowerKey()`, `floorEntry()`, `pollFirstEntry()`, `headMap()`, &hellip;.|
+
+### Implementeren van container klassen
+
+In de nieuwere versie van Java is het gemakkelijker om een enum klasse te maken:
+
+```java
+public enum Gender {
+	MALE, FEMALE; // The semi-colon is optional in this case
+}
+
+public enum Severity {
+	LOW, MEDIUM, HIGH, URGENT;
+}
+```
+
+Je kan enumeraties het best met klassen vergelijken. We gaan hier verder niet al te diep op in, maar weet dat een enumeratie dan ook veel complexere vormen kan aannemen zoals hierboven. 
+
+> Oef Coll.5 (extra)
+
+Voor het creëren van object binnen het Java Collections Framework en Maps ga je als gewoonlijk te werk. Het wordt wel aangeraden om steeds de interface te gebruiken bij het instantiëren en niet de overeenkomstige implementatieklassen (*Implementation classes*):
+
+```java
+List<String> names = new ArrayList<>();
+Set<String> namesSet = new HashSet<>();
+SortedSet<String> namesSortedSet = new TreeSet<>();
+Queue<String> queue = new LinkedList<>();
+Map<String, String> map = new HashMap<>();
+SortedMap<String,String> sMap = new TreeMap<>();
+```
+
+Dit laat toe om gemakkelijker subtypes in elkaar om te zetten en verhoogt de uitbreidbaarheid van de code in het algemeen.
+
+Denk eraan dat bij het creëren van een (gesorteerde) set met objecten van een eigen klasse je een `Comparator` moet meegeven:
+
+```java
+SortedSet<Person> personsSortedByName = new TreeSet<>(
+	Comparator.nullsFirst (	Comparator.comparing(Person::getName)));
+```
+
+In bovenstaand voorbeeld wordt er naar de `getName()` methode verwezen (*method reference* to create a *lambda expression*) om de sortering va de elementen te bepalen tijdens het toevoegen ervan. Bovendien zorgt dit ervoor dat het toevoegen van twee personen met de zelfde naam niet mogelijk is. De `nullsFirst` methode zorgt ervoor dat het `null` element toegelaten is en eerst in de rij gesorteerd wordt. De `Comparator` zoals hierboven getoond wordt, kan ook aangewend worden om de prioriteit in een `PriorityQueue` te bepalen. Hieronder nog een voorbeeld van hoe je een `Comparator` object kan maken dat eerst rekening houdt met de lengte van een tekenreeks en daarna (indien de lengte hetzelfde is) alfabetisch sorteert zonder met hoofdletters/kleine letters rekening te houden:
+
+```java
+Comparator<String> keyComparator =
+	Comparator.comparing(String::length)
+		.thenComparing(String::compareToIgnoreCase);
+SortedMap<String, String> sMap = new TreeMap<>(keyComparator);
+```
+
+Het is belangrijk een goed beeld te hebben van de overerving binnen het Java Collections framework. De reden is dat vele van de interfaces en klassen meerdere collectie types kunnen hanteren. Je hebt bijvoorbeeld de `LinkedList` die zich zowel als wachtrij en als lijst kan gedragen en de `Deque` die meerdere wachtrij vormen kan voorstellen. Dat is een probleem natuurlijk en hier zie je dat het Collections Framework van Java nogal ondermaats is. Kijk maar eens naar het onderstaand voorbeeld:
+
+```java
+public class MyClass {
+	public void myMethod(Deque stack){
+	}
+}
+```
+
+Het is duidelijk dat de ontwikkelaar wenst een LIFO object door te geven aan de methode `myMethod`. Het probleem is dat deze methode nu vrij is om de variabele `stack` te gebruiken hoe het wil, als LIFO of als FIFO object. Dit komt omdat de `Deque` interface methoden voor beide type operaties voorziet. De oplossing is om een eigen interface uit te rollen en te implementeren zodat de nodige restricties worden opgelegd.
+
+> Oef Coll.6
+
+Als oplossing (meer een hack?) biedt Java wel de methode `asLifoQueue()` aan om van een `Deque` een echte LIFO stack te maken.
+
+### Operaties op collecties
+
+Men kan verschillende soorten methoden onderscheiden die op collecties werken. Sommige methoden geven informatie terug van de collectie als geheel:
+
+`size()` — `isEmpty()`
+
+Andere staan in voor het toevoegen, controleren of verwijderen van telkens één waarde of element:
+
+`contains()` — `add()` — `remove()`
+
+Samen met voorgaande worden deze operaties de zogenaamde basis operaties genoemd (*Basic operations*). Dan zijn er de bulk operaties die met meerdere elementen tegelijk kunnen werken:
+
+`addAll(Collection<? extends E> c)` — `clear()` — `boolean removeAll(Collection<?> c)` — `containsAll(Collection<?> c)` — `retainAll(Collection<?> c)`
+
+Set operaties zijn mogelijk via deze methoden. Merk wel op dat bij het maken van een doorsnede van twee sets `s1` en `s2` d.m.v. `s1.retainAll(s2);` het object `s1` wordt gewijzigd. Wil je een referentie behouden tot de oorspronkelijk set `s1`, dan moet je hier eerst een kopij van maken d.m.v. `Set s1Old = new HashSet(s1);`. Onderstaande code leidt tot een set met slechts één element (declaratie `personsSortedByName` staat hierboven):
+
+```java
+personsSortedByName.add(new Person(1, "Donna"));
+personsSortedByName.add(new Person(2, "Donna"));
+```
+
+In de `Queue` interface bestaan er telkens tegenhangers voor de `add()`, `remove()` en `element()` methoden, namelijk `offer()`, `poll()` en `peek()`. Deze laatsten verschillen in dat ze geen fouten genereren. Bijvoorbeeld `poll()` geeft `null` weer indien er geen elementen meer over zijn i.p.v. een fout te genereren.
+
+```java
+queue.offer("Richard");
+queue.offer("Donna");
+queue.offer("Ken");
+
+while (queue.peek() != null) {
+	queue.poll();
+}
+```
+### Navigeren van een collectie
+
+Er zijn meerdere manieren om te 'loopen' over de elementen van een collectie. Er is de eenvoudige for-each lus:
+
+```java
+List<String> names = new ArrayList<>();
+names.add ("Abu");
+names.add ("Bob");
+names.add ("Bea");
+
+for(String name : names) {
+	System.out.println(name);
+}
+```
+
+Er is ook de forEach methode:
+
+```java
+names.forEach(System.out::println); // Using a method reference
+```
+
+In de achtergrond zal de compiler bovenstaande code omzetten naar iets dat van de `Iterator`-methodes `hasnext()` en `next()` gebruik maakt. Indien je elementen wil kunnen verwijderen tijdens het itereren gaat dat niet met een foreach en kan moet je zelf deze methodes gebruiken:
+
+```java
+Iterator<String> nameIterator = names.iterator();
+
+while(nameIterator.hasNext()) {
+	String name = nameIterator.next();
+	if ( name.toString() == "Bob" ){
+		nameIterator.remove();
+	}
+}
+```
+
+Ten slotte is er de mogelijkheid om gebruik te maken van de `forEachRemaining` methode:
+
+```java
+nameIterator.forEachRemaining(System.out::println) 
+```
+
+De `ListIterator` interface die overerft van de `Iterator` interface laat ook toe om de `hasPrevious()` en `previous()` te gebruiken om achterwaarts te navigeren.
+
+> Oef Coll.7 & 8
+
+Voor queues hangt het resultaat van het doorlopen af van welke type je implementeert, maar in de meeste gevallen dient een wachtrij niet om door te lopen. Voor een klasse die `Map` implementeert is dat anders, hieronder is een voorbeeld van hoe je doorheen een `HashMap` kan lopen:
+
+```java
+Map<String, String> map = new HashMap<>();
+
+map.put("John", "(342)113-9878");
+map.put("Richard", "(245)890-9045");
+map.put("Donna", "(205)678-9823");
+map.put("Ken", "(205)678-9823");
+
+Set<Map.Entry<String,String>>entries = map.entrySet();
+
+for ( Map.Entry<String,String> entry:entries ){
+	System.out.println("key=" + entry.getKey() + ", value=" + entry.getValue());
+}
+```
+
+### Opzoeken van een element in een collectie
+
+Er zijn heel wat methoden gepasseerd die te maken hebben hebben het opzoeken van elementen in een collectie (bijvoorbeeld `lower()`, `floor()`, `higher()`, `ceiling()` voor sets). Voor lijsten bestaat er de `binarySearch` methode:
+
+```java
+public static <T> int binarySearch​(List<? extends Comparable<? super T>> list, T key)
+```
+
+Zo werkt het:
+
+```java
+List<String> list = new ArrayList<>();
+
+list.add("John");
+list.add("Richard");
+list.add("Donna");
+list.add("Ken");
+
+Collections.sort(list);
+int index = Collections.binarySearch(list, "Donna");
+```
+
+Merk op dat de lijst eerst gesorteerd moet worden alvorens de `binarySearch` methode aan te roepen. Voor de hash-based collecties, dus de klassen met `hash` in de naam, zijn het meest efficient in het terugvinden van elementen, maar, zoals eerder gezien, gaat dit enkel indien `hashcode()` en `equals()` correct geïmplementeerd zijn.
 
 ### Termen
 
@@ -394,7 +588,9 @@ Over generics kan nog veel meer verteld worden.
 |------|----------------------|
 | CT   | Compile-time         |
 | GC   | Garbage Collector    |
+| FIFO | First in, first out  |
 | JVM  | Java Virtual Machine |
+| LIFO | Last in, first out   |
 | OO   | Object georiënteerd  |
 
 ### Referenties

@@ -1,6 +1,5 @@
 # JAVA Advanced (31089/1607/1819/1/72)
-## Introductie
-### OLOD Fiche
+## OLOD Fiche
 
 | Omschrijving                   | Waarde                          |
 |--------------------------------|---------------------------------|
@@ -19,6 +18,6 @@
 | Toetsing vorm                  | Digitaal                        |
 | Toetsing duur                  | 240 min                         |
 
-### Korte omschrijving OLOD
+## Korte omschrijving OLOD
 
 In dit OLOD word je ondergedompeld in Java. Je leert de populairste en recentste Java frameworks gebruiken en bouwt een degelijke basis op die je zal toepassen in het informatica project.
