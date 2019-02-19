@@ -89,9 +89,10 @@ public class MyClass{
 
 Merk op dat de annotatie in feite een verkorte vorm is voor het uitvoeren van volgende taken:
 
-- Creëren van een klasse die de interface implementeerd
+- Creëren van een klasse die de interface implementeert
 - Instantiëren van die klasse
 - Het zetten van de waarden voor de elementen (hier `minor` en `major`)
+- Het koppelen van de annotatie-instantie met een Java element
 
 ### Standaardwaarden
 
@@ -100,7 +101,7 @@ Je kan opgeven dat een element van de annotatie een standaard waarde gebruik ind
 ```java
 public @interface Version {
 	int major();
-	int minor() default 0; // Set zero as default value for minor
+	int minor() default 0;
 }
 
 // Aanroepen
@@ -109,9 +110,10 @@ public @interface Version {
 
 ### Verkorte schrijfwijze
 
-Om een annotatie te maken zoals `@Override` waarbij geen haakjes nodig zijn of waarbij je de parameternaam niet hoeft op te geven, declareer je deze met allemaal elementen die een standaardwaarde hebben of waarbij van de één elementen geen standaardwaarde heeft maar dan wel de vaste naam `value` draagt:
+Om een annotatie te maken zoals `@Override` waarbij geen haakjes nodig zijn of waarbij je de parameternaam niet hoeft op te geven, declareer je deze met allemaal elementen die een standaardwaarde hebben (voorbeeld A hieronder) of waarbij van de één elementen geen standaardwaarde heeft maar dan wel de vaste naam `value` draagt (voorbeeld B hieronder):
 
 ```java
+// Voorbeeld A
 public @interface Enabled {
 	boolean status() default true;
 }
@@ -122,6 +124,7 @@ public class Test {}
 ```
 
 ```java
+// Voorbeeld B
 public @interface A {
 	String value();
 	int id() default 10;
@@ -132,7 +135,9 @@ public @interface A {
 public class Test {}
 ```
 
-Een annotatie die enkel als 'flag' dient, kan je zo gebruiken:
+### Fun with flags
+
+Een annotatie die enkel als 'flag' dient noemt men een 'marker annotatie', kan je zo gebruiken:
 
 ```java
 public @interface Marker {}
@@ -144,7 +149,7 @@ public class Test {}
 
 ### Meta-annotaties
 
-Zijn annotaties op annotaties. Hier is een voorbeeld van listing 1.6 op p.13 $^2$:
+Meta-annotaties zijn annotaties op annotaties. Hier is een voorbeeld van listing 1.6 op p.13 $^2$:
 
 ```java
 import java.lang.annotation.ElementType;
@@ -184,7 +189,6 @@ Repeatable
 ```
 
 De `Inherited` annotatie is een marker meta-annotatie type dat aangeeft of subklassen van de gemarkeerde klassen ook de annotatie overerven. `Documented` stuurt de Javadoc tool aan en `Repeatable` geeft aan of de annotatie mag herhaald worden.
-
 
 ### Termen
 
