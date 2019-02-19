@@ -253,15 +253,6 @@ public class A {
 //   Instantiation
 A a = new A();
 A.B b = a.new B();
-
-// Scenario II
-//   Declaration
-public class A {
-	public class B extends A {}
-}
-//   Instantiation
-A a = new A();
-A.B b = a.new B();
 ```
 Voor scenario III. moet je iets speciaal doen. Indien je dit probeert:
 
