@@ -410,11 +410,6 @@ List<Student> studenten = new ArrayList<>();
 List<Student> deTop = Reduce.filter(studenten, s -> s.getScore() > 15 );
 ```
 
-return list.stream()
-  .filter(s -> s.startsWith("a"))
-  .filter(s -> s.length() == 3)
-  .collect(Collectors.toList());
-
 #### Oef Lambda.2 [120 min]
 
 Lees [dit article](https://javarevisited.blogspot.com/2014/02/10-example-of-lambda-expressions-in-java8.html) grondig.
