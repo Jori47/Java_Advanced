@@ -186,7 +186,7 @@ Er zijn meerdere vormen mogelijk (Tabel 5.3 p. 150 $^2$):
 |ClassName::new|A constructor reference to the constructor of the specified class|
 |ArrayTypeName::new|An array constructor reference to the constructor of the specified array type|
 
-
+> Oef Lambda.2
 
 ### Termen
 

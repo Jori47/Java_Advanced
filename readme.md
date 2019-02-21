@@ -47,6 +47,8 @@ De volgende items zijn nodig tijdens de hoorcolleges, tijdens het practicum (=la
 - Draagbare computer
 - Java SE Development Kit 11.0.2 geïnstalleerd (voor installatie, zie [hieronder](#Java_Install))
 - Visual Studio Code (VS Code) geïnstalleerd (voor installatie, zie [hieronder](#VS_Install))
+- [Maven](http://maven.apache.org/) geïnstalleerd
+- VS Code extensies `Java Extension Pack`, `Maven for Java` en `Markdown+Math` geïnstalleerd
 
 ### Verloop hoorcolleges
 

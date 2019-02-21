@@ -437,7 +437,7 @@ public class TitleListWithInnerClass {
 
 	public Iterator<String> titleIterator() {
 		// An anonymous class
-		Iterator<String> iterator = new Iterator<String>() {
+		return new Iterator<String>() {
 			int count = 0;
 
 			@Override
@@ -450,7 +450,6 @@ public class TitleListWithInnerClass {
 				return titleList.get(count++);
 			}
 		}; // Anonymous inner class ends here
-		return iterator;
 	}
 }
 ```
@@ -463,7 +462,7 @@ new <interface-name or superclass-name> (<argument-list>) {
 }
 ```
 
-Omdat de anonieme klassen geen naam hebben lopen de declaratie en instantiëren samen en kan je slechts 1 object maken van deze klass (*one-time class*).
+Omdat de anonieme klassen geen naam hebben lopen de declaratie en instantiëren samen en kan je slechts 1 object maken van deze klasse (*one-time class*).
 
 ### Termen
 

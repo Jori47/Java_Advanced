@@ -356,6 +356,48 @@ Probeer een test klasse te schrijven om na te gaan wat er gebeurt indien je:
 3. opnieuw titels toevoegt
 4. opnieuw de `titleIterator()`  gebruikt om de lijst te doorlopen. Worden de laatst toegevoegde titels door de iterator opgepikt?
 
+### Annotaties
+#### Oef Ann.1 [10 min]
+
+*Deze oefening dient om op basis van een probleemstelling een zoekopdracht uit te voeren in de documentatie en om een glimp te krijgen van de vrij beschikbare annotatie types.*
+
+In de documentatie van Oracle voor Java 11 staan 47 annotatietypes gedefinieerd. Zoek de overzichtpagina waar deze allemaal staan opgesomd en zoek in deze lijst naar diegene die dient om een gebeurtenisveld te annoteren en om aan te geven dat de waarden van dit veld een tijdsduur aangeven. Maak de gepaste annotatie bij onderstaande klasse zodat de tijsduur van 2.9872 seconden wordt opgegeven:
+
+```java
+public class DataFetch extends Event {
+    private String bigData;
+ 
+    public void setBigData(String bigData) {
+        this.bigData = bigData;
+    }
+ 
+    public String getBigData() {
+        return bigData;
+    }
+}
+```
+
+#### Oef Ann.2 [30 min]
+
+*Deze oefening dient om ervaring op te doen in het definiëren van nieuwe annotatie types.*
+
+Stel, een grote toepassing moet gemigreerd worden van Java 5 naar Java 11. Definieer de annotatie `Migration` met vier elementen:
+
+- `team`: een enumeratie (`Group`) met volgende waarden: `CONSULT_1`, `CONSULT_2`, `JAVA_CORE_TEAM`, `DEV_TEAM`
+- `phase`: een integer (standaard = 1)
+- `allowedExceptions`: dit element is een array van het type `Throwable` (of een subklasse ervan) en heeft als standaardwaarde de klasse van `DefaultException`
+- `comment`: een String (standaard leeg) om uitleg mee te geven omtrent de uit te voeren migratie
+
+Zorg dat onderstaande annotaties geen CT fouten genereren:
+
+```java
+@Migration ( Group.JAVA_CORE_TEAM )
+@Migration ( group=Group.JAVA_CORE_TEAM, phase=3, allowedExceptions = {IllegalClassFormatException, IOException.class}, comment="Could be moved to phase 2 if we decide to implement EARTA.")
+```
+
+Zorg er verder voor dat dit type tijdens runtime gelezen kan worden en dat het enkel op methoden en klassen kan gebruikt worden. Probeer het dan eens uit op een ander element en observeer de melding die er gegeven wordt.
+
+### Lambda Expressies
 #### Oef Lambda.1 [35 min]
 
 *Deze oefening laat zien hoe lambda expressies nuttig kunnen worden ingezet.*
@@ -367,6 +409,15 @@ List<Student> studenten = new ArrayList<>();
 // Hier studenten toevoegen met hun punten
 List<Student> deTop = Reduce.filter(studenten, s -> s.getScore() > 15 );
 ```
+
+return list.stream()
+  .filter(s -> s.startsWith("a"))
+  .filter(s -> s.length() == 3)
+  .collect(Collectors.toList());
+
+#### Oef Lambda.2 [120 min]
+
+Lees [dit article](https://javarevisited.blogspot.com/2014/02/10-example-of-lambda-expressions-in-java8.html) grondig.
 
 ### Referenties
 

@@ -190,6 +190,10 @@ Repeatable
 
 De `Inherited` annotatie is een marker meta-annotatie type dat aangeeft of subklassen van de gemarkeerde klassen ook de annotatie overerven. `Documented` stuurt de Javadoc tool aan en `Repeatable` geeft aan of de annotatie mag herhaald worden.
 
+> Oef Ann.1
+
+> Oef Ann.2
+
 ### Termen
 
 | Term | Betekenis            |
