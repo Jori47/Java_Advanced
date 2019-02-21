@@ -1,5 +1,5 @@
 # JAVA Advanced (31089/1607/1819/1/72)
-## Oefeningen
+## Oefeningen [&plusmn;16 hrs and counting...]
 ### Oefeningen Recap [3 hrs]
 #### Oef Recap.1 [20 min]
 
@@ -254,7 +254,7 @@ Probeer nu in bovenstaande code gebruik te maken van een for-each lus en je zou 
 
 Maak een nieuwe set aan (`Set`) en voeg eens twee dezelfde waarden toe. Wat gebeurt er? Krijg je een foutmelding?
 
-### Inner classes
+### Inner classes [3 hrs 45 min]
 #### Oef Inn.1 [40 min]
 
 *Deze oefening dient om eens kennis te maken met inner klassen en het aanmaken van inner objecten.*
@@ -356,7 +356,7 @@ Probeer een test klasse te schrijven om na te gaan wat er gebeurt indien je:
 3. Opnieuw titels toevoegt
 4. Opnieuw de `titleIterator()` gebruikt om de lijst te doorlopen. Worden de laatst toegevoegde titels door de iterator opgepikt?
 
-### Annotaties
+### Annotaties [40 min]
 #### Oef Ann.1 [10 min]
 
 *Deze oefening dient om op basis van een probleemstelling een zoekopdracht uit te voeren in de documentatie en om een glimp te krijgen van de vrij beschikbare annotatie types.*
@@ -397,7 +397,7 @@ Zorg dat onderstaande annotaties geen CT fouten genereren:
 
 Zorg er verder voor dat dit type tijdens runtime gelezen kan worden en dat het enkel op methoden en klassen kan gebruikt worden. Probeer het dan eens uit op een ander element en observeer de melding die er gegeven wordt.
 
-### Lambda Expressies
+### Lambda Expressies [155 min]
 #### Oef Lambda.1 [35 min]
 
 *Deze oefening laat zien hoe lambda expressies nuttig kunnen worden ingezet.*
