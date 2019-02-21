@@ -351,10 +351,10 @@ public class TitleList {
 
 Probeer een test klasse te schrijven om na te gaan wat er gebeurt indien je:
 
-1. titels toevoegt
-2. Een `titleIterator()` declareert en bewaart onder de opvraagt en gebruikt om de lijst te doorlopen
-3. opnieuw titels toevoegt
-4. opnieuw de `titleIterator()`  gebruikt om de lijst te doorlopen. Worden de laatst toegevoegde titels door de iterator opgepikt?
+1. Titels toevoegt
+2. Een `titleIterator()` declareert en bewaart om doorheen de lijst te lopen
+3. Opnieuw titels toevoegt
+4. Opnieuw de `titleIterator()` gebruikt om de lijst te doorlopen. Worden de laatst toegevoegde titels door de iterator opgepikt?
 
 ### Annotaties
 #### Oef Ann.1 [10 min]
