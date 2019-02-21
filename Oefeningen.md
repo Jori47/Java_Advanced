@@ -137,7 +137,7 @@ Maak een generieke klasse `KeyValues` die zogenaamde [key-value pairs](https://e
 
 *Deze oefening moet aanleren om zelf een functionele generiek klasse aan te maken.* 
 
-Maak een generieke klasse `Ontology` waarin objecten met elkaar geassocieerd kunnen worden. De initialisatie van dit semantisch web gebeurt aan de hand van een array van objecten. Daarna kan de ontwikkelaar gebruik maken van de methode `link ( object A, object B, Link L )` waarbij L een instantie is van de zelf aan te maken klasse `Link` of een object dat daarvan overerft en waarbij de types voor objecten A en B hetzelfde moeten zijn. De klasse `Link` heeft de object variabelen `LocalDate startDate` en `String description`.  Schrijf een `toString()` voor deze klasse die mooi alle relaties binnen de ontologie afdrukt, bijvoorbeeld:
+Maak een generieke klasse `Ontology` waarin objecten met elkaar geassocieerd kunnen worden. De initialisatie van dit semantisch web gebeurt aan de hand van een array van objecten. Daarna kan de ontwikkelaar gebruik maken van de methode `makeLink ( object A, object B, Link L )` waarbij L een instantie is van de zelf aan te maken klasse `Link` of een object dat daarvan overerft en waarbij de types voor objecten A en B hetzelfde moeten zijn. De klasse `Link` heeft de object variabelen `LocalDate startDate` en `String description`.  Schrijf een `toString()` voor deze klasse die mooi alle relaties binnen de ontologie afdrukt, bijvoorbeeld:
 
 ```
 "My object A" ——— depends on ———> "My object B" (since 2018-04-13)
