@@ -261,6 +261,7 @@ Maak een nieuwe set aan (`Set`) en voeg eens twee dezelfde waarden toe. Wat gebe
 
 Gegeven de klassen `Customer`, `Invoice`, `Product`, `Price`, `Address` en `ProductClass`, probeer een logisch verband te vinden tussen deze klassen en probeer waar mogelijk inner klassen te gebruiken. Maak dan een testklasse `Order` aan van waaruit een factuur wordt opgesteld met een vijftal producten. Het afdrukken van de factuur moet een resultaat geven gelijkaardig aan het volgende:
 
+```
 Invoice No <Invoice.number>
 <Customer.name>
 <Customer.address.line1>
@@ -272,7 +273,8 @@ Invoice No <Invoice.number>
 <Product.name4>		<quantity>		<price>
 <Product.name5>		<quantity>		<price>
 
-						Total:	<totalPrice>
+				Total:	<totalPrice>
+```
 
 #### Oef Inn.2 [25 min]
 

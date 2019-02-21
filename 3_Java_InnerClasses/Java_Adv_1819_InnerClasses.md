@@ -461,7 +461,7 @@ new <interface-name or superclass-name> (<argument-list>) {
 	// Anonymous class body goes here
 }
 ```
-
+	
 Omdat de anonieme klassen geen naam hebben lopen de declaratie en instantiëren samen en kan je slechts 1 object maken van deze klasse (*one-time class*).
 
 ### Termen
