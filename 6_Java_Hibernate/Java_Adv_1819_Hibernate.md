@@ -252,9 +252,7 @@ Je hebt nu genoeg info om de persistente klassen af te werken en individuele tab
 
 ### Associaties
 
-
 ### Querying
-
 ### Java-Realisme
 
 Als je goed kijkt naar het architectuurschema dat we eerder introduceerden, zie je een aantal eigenaardigheden:
@@ -265,17 +263,9 @@ Denk eraan dat het doel is om Java applicatie te koppelen aan een databank. Als 
 
 Bovendien zie je daar configuratie en mapping staan. Bijna altijd als je deze woorden ziet staan, wees dan op je hoede want je bent het domein van OOP aan het verlaten. Configuratie is alles wat OOP niet is. Mapping is niet veel beter. De hele bedoeling van objecten is het niet nodig hebben van mappings. Je kan het niet vermijden als je vertrekt van een set tekst bestanden, maar eens in een databank moet het OO karakter gehandhaafd. Mappings en serialisaties en dergelijke mogen eigenlijk niet tot het domein van de software ontwikkelaar behoren.
 
-Nieuwe frameworks komen snel.... en in het begin gaat alles goed.  Na een tijdje beginnen de eerste scheurtjes in het framework op te vallen en voor je het weet ben je in een programeerhel terecht gekomen waar geen ontsnappen meer aan is. De evolutie van "Waw, wat een cool framework!" naar "Hoe hebben we daar ooit mee kunnen en willen werken?" gaat steeds sneller en je kan maar best op de uitkijk staan wanneer iemand met een "Waw" komt pronken. Dat is Hibernate nu ook vergaan:
-
 ![Hibernate architecture](Java_Adv_1819_Hibernate/Trends.jpg)
 
-De "Waw" is meestal van korte duur. Hier vind je een mooie, zei het ietwat gekleurde samenvatting van Hibernate:
-
-<iframe src="https://player.vimeo.com/video/28885655?color=ff9933&portrait=0" width="640" height="204" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-In dit verband vind je hier nog een interessant artikel over het gebruik van annotaties:
-
-https://www.yegor256.com/2016/04/12/java-annotations-are-evil.html
+Nieuwe frameworks komen snel.... en in het begin gaat alles goed.  Na een tijdje beginnen de eerste scheurtjes in het framework op te vallen en voor je het weet ben je in een programeerhel terecht gekomen waar geen ontsnappen meer aan is. De evolutie van "Waw, wat een cool framework!" naar "Hoe hebben we daar ooit mee kunnen en willen werken?" gaat steeds sneller en je kan maar best op de uitkijk staan wanneer iemand met een "Waw" komt pronken. Werp dan een genuanceerd op het nieuwe framework! Dat is Hibernate nu ook vergaan:
 
 ### Termen
 
@@ -291,6 +281,12 @@ https://www.yegor256.com/2016/04/12/java-annotations-are-evil.html
 | LIFO | Last in, first out         |
 | OO   | Object georiënteerd        |
 | ORM  | Object-relational mapping  |
+
+### On-line
+
+- [Deze video reeks](https://www.youtube.com/watch?v=0hm3QidFwYY&list=PLEAQNNR8IlB7fNkRsUgzrR346i-UqE5CG) is een goed begin. Het gaat een beetje traag, maar het wordt goed uitgelegd en de spreker is aangenaam om naar te luisteren.
+- [Een interessant artikel](https://www.yegor256.com/2016/04/12/java-annotations-are-evil.html) over het gebruik van annotaties.
+- Hier vind je nogal kritische blik op Hibernate: <iframe src="https://player.vimeo.com/video/28885655?color=ff9933&portrait=0" width="640" height="204" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ### Referenties
 
