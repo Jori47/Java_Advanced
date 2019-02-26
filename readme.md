@@ -2,6 +2,7 @@
 title: JAVA Advanced (31089/1607/1819/1/72)
 layout: Midnight
 author: David D'Haese
+toc: true
 ---
 
 # JAVA Advanced (31089/1607/1819/1/72)
