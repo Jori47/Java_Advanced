@@ -1,6 +1,6 @@
 ---
 title: JAVA Advanced (31089/1607/1819/1/72)
-layout: Midnight
+layout: single
 author: David D'Haese
 toc: true
 toc_label: "My Custom Table of Contents Label"
