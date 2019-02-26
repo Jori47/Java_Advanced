@@ -8,7 +8,7 @@ Hibernate is een ORM tool waarvan de ontwikkeling begon in 2001 en later gestuur
 
 Merk op dat we hier geen gebruik gaan maken van de JPA (een soort interface om van ORM te kunnen switchen). Er wel nog steeds nood aan een persistent object dat als interface zal dienen tussen Hibernate en de toepassing. De figuur hieronder laat zien hoe dat Hibernate op zijn beurt via JDBC geïnterfaced is met een databank.
 
-![Hibernate architecture](Java_Adv_1819_Hibernate/Hibernate_architecture.png)
+![Hibernate architecture](Media/Hibernate_architecture.png)
 
 Volg onderstaande stappen om een Hibernate toepassing klaar te zetten. Na deze stappen gaan we iets dieper in op de het gebruik van de toepassing.
 
@@ -16,7 +16,7 @@ Volg onderstaande stappen om een Hibernate toepassing klaar te zetten. Na deze s
 
 Installeer indien nodig [Maven](http://maven.apache.org/) en de VS Code extensie `Maven for Java`. Als je Maven nog niet kent, kan je een Maven archetype uitproberen met de VS Code opdracht  `Maven: Generate from Maven archetype`.
 
-![Maven archetype](Java_Adv_1819_Hibernate/Maven_Archetype.jpg)
+![Maven archetype](Media/Maven_Archetype.jpg)
 
 Om de Maven commando's uit te voeren gebruik je de opdracht `Maven Execute Commands` of gebruik je de rechter muisknop op het juiste project in de `MAVEN PROJECTS` sidebar.
 
@@ -24,7 +24,7 @@ Om de Maven commando's uit te voeren gebruik je de opdracht `Maven Execute Comma
 
 Kopieer je de artefacten [hibernate-core](https://search.maven.org/artifact/org.hibernate/hibernate-core/5.4.1.Final/jar) uit de [Maven Central Repository](http://repo.maven.apache.org/maven2/) en [mssql-jdbc](https://docs.microsoft.com/en-us/sql/connect/jdbc/download-microsoft-jdbc-driver-for-sql-server?view=sql-server-2017) van Microsoft naar jouw `pom.xml` bestand. Druk indien nodig op de ververs-knop op de `JAVA DEPENDENCIES` sidebar:
 
-![Refresh Dependencies](Java_Adv_1819_Hibernate/Refresh_Dependencie.jpg)
+![Refresh Dependencies](Media/Refresh_Dependencie.jpg)
 
 Controleer bij problemen jouw `.classpath` bestand in de project root folder om na te gaan dat deze automatisch werd aangevuld.
 
@@ -42,7 +42,7 @@ De data die we voor deze demo gebruiken is afkomstig van een Cannabis dataset va
 
 Hieronder is het schema (MSSQL):
 
-![MS_SQL](Java_Adv_1819_Hibernate/DB_MSSQL.jpg)
+![MS_SQL](Media/DB_MSSQL.jpg)
 
 Begin met enkel de `Breeder` tabel aan te maken. Zorg ervoor dat de id self-incrementing is. De rest van het data model kan je later aanvullen.
 
@@ -257,13 +257,13 @@ Je hebt nu genoeg info om de persistente klassen af te werken en individuele tab
 
 Als je goed kijkt naar het architectuurschema dat we eerder introduceerden, zie je een aantal eigenaardigheden:
 
-![Hibernate architecture](Java_Adv_1819_Hibernate/Hibernate_architecture.png)
+![Hibernate architecture](Media/Hibernate_architecture.png)
 
 Denk eraan dat het doel is om Java applicatie te koppelen aan een databank. Als je twee dingen aan elkaar wil koppelen, heb je een interface nodig. Maar in plaats daarvan staat hier een volledig uitgebouwd framework tussen (Hibernate). Handig, toch? Behalve dat je nu 2 interfaces nodig hebt (oranje in bovenstaande figuur). En met interfaces moet je zuinig zijn. Ze bieden meer flexibiliteit maar dat gaat bijna altijd ten koste van onderhoudbaarheid.
 
 Bovendien zie je daar configuratie en mapping staan. Bijna altijd als je deze woorden ziet staan, wees dan op je hoede want je bent het domein van OOP aan het verlaten. Configuratie is alles wat OOP niet is. Mapping is niet veel beter. De hele bedoeling van objecten is het niet nodig hebben van mappings. Je kan het niet vermijden als je vertrekt van een set tekst bestanden, maar eens in een databank moet het OO karakter gehandhaafd. Mappings en serialisaties en dergelijke mogen eigenlijk niet tot het domein van de software ontwikkelaar behoren.
 
-![Hibernate architecture](Java_Adv_1819_Hibernate/Trends.jpg)
+![Hibernate architecture](Media/Trends.jpg)
 
 Nieuwe frameworks komen snel.... en in het begin gaat alles goed.  Na een tijdje beginnen de eerste scheurtjes in het framework op te vallen en voor je het weet ben je in een programeerhel terecht gekomen waar geen ontsnappen meer aan is. De evolutie van "Waw, wat een cool framework!" naar "Hoe hebben we daar ooit mee kunnen en willen werken?" gaat steeds sneller en je kan maar best op de uitkijk staan wanneer iemand met een "Waw" komt pronken. Werp dan een genuanceerd op het nieuwe framework! Dat is Hibernate nu ook vergaan:
 

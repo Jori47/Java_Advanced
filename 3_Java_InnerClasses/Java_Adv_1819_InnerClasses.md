@@ -64,7 +64,7 @@ public class Car {
 
 Er zijn verschillende soorten van inner klasse (zie figuur hieronder). De vorm die hierboven gedemonstreerd werd is de zogenaamde *member inner class*. Het bevindt zich in de bovenliggende klasse net als een object variabele en kan verschillende toegankelijkheid krijgen via de *access modifiers* `public`, `private` en `protected`. Een tweede vorm noemt men een *local inner class*. Deze vorm bevindt zich in een methode, een constructor of een (statische) initializer (zie figuur hieronder). Het kan geen access modifier meekrijgen en moet een publieke interface implementeren en/of overerven van een superklasse waarvan het minstens één methode overschrijft.
 
-![](Java_Advanced_1819_InnerClasses/Member_VS_Local.png)
+![](Media/Member_VS_Local.png)
 
 Er is nog een derde vorm, de zogenaamde *anonymous inner class*. Dit is hetzelfde als een lokale inner klasse maar dan zonder naam.
 
@@ -81,7 +81,7 @@ Voordat we in detail gaan bekijken we eerst de voordelen die inner en nested kla
 
 Het instantiëren van een inner klasse vereist dat de overeenkomstige outer klasse ook geïnstantieerd is. De onderstaande figuur probeert dit uit te beelden:
 
-![](Java_Advanced_1819_InnerClasses/Instantiating.png)
+![](Media/Instantiating.png)
 
 Dit bovenste geldt voor alle inner klassen. Hoe de instantiëring moet gebeuren, verschilt al naargelang het type inner klasse. We beginnen met de member inner klasse:
 
@@ -229,7 +229,7 @@ The field innPubSta cannot be declared static in a non-static inner type, unless
 
 Onderstaande figuur toont verschillende overervingsconfiguraties. In scenario I. zie je bijvoorbeeld hoe er binnen een omliggende klasse A twee inner klassen bestaan (B en C) en hoe de inner klasse C overerft van inner klasse B. In het tweede scenario (II.) zie je hoe een inner klasse B ook rechtstreeks van *een* omliggende klasse A kan overerven. Overerving kan ook gebeuren door klassen die niet tot een 'familie' behoren (III.). Hier erft de klasse A over van een inner klasse C die zich zelf binnen klasse B bevindt. Zo kunnen twee inner klassen uit twee verschillende 'families' ook van elkaar overerven (IV.) en kunnen zelfs de respectievelijke omliggende en inner klassen onafhankelijk van elkaar overerven (V.).
 
-![](Java_Advanced_1819_InnerClasses/Inheritance.png)
+![](Media/Inheritance.png)
 
 Het declareren van de klassen staat voor al deze scenario's hieronder uitgebeeld. Voor de scenario's I. en II. is het nog vrij eenvoudig:
 

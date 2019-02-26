@@ -21,7 +21,7 @@ out.println ( "The answer is " +
 
 Vele programmeurs denken dat een hash code een unieke code is die een bepaald object voorstelt. Dat is dus niet waar. Kijk bijvoorbeeld naar deze figuur uit het engelstalig Wikipedia artikel voor *hash function*:
 
-![Wikipedia Hash Function](Java_Adv_1819_Collections/Hash_Function2.png "Hash function")
+![Wikipedia Hash Function](Media/Hash_Function2.png "Hash function")
 
 Merk op dat er twee verschillende namen de hash `02` hebben (rode pijlen). Daarom dat er in bovenstaande code `"Maybe"` stond. Indien de hashes van twee objecten verschillen, dan weet men zeker dat de objecten ook echt verschillend zijn. Indien de hashes hetzelfde zijn, kan men geen uitspraak doen. Bij de meeste hashed collections zal de kans erg klein zijn dat twee dezelfde hashes afkomstig zijn van verschillende objecten maar die kans hoeft niet per sé nul te zijn om een geldige hashed collection te zijn en hoe groot die kans precies is hangt af van de implementatie. De ingebouwde hash functies van Java zijn gebaseerd op de geheugenplaats van het object waarnaar verwezen wordt. De kans is dus in principe onbestaande dat twee dezelfde hashes afkomstig zijn van twee verschillende objecten.
 
@@ -277,7 +277,7 @@ ArrayList<Integer> list = new ArrayList<>();
 
 De compiler kan hier het type zelf afleidden (*type inference*) en dus mag je gebruik maken van `<>`, hetgeen men de diamant operator noemt (*diamond operator*). Deze verkorte schrijfwijze is niet geldig voor foutenklassen (*Exceptions*) en voor anonieme klassen (zie later).
 
-![Wrapping the Reachstag](Java_Adv_1819_Collections/Wrapped_ReachsTag.jpg "Why using a wrapper?")
+![Wrapping the Reachstag](Media/Wrapped_ReachsTag.jpg "Why using a wrapper?")
 
 Hoe moet men nu een generiek type maken? Hieronder is een voorbeeld te zien. De klasse `Wrapper` moet het 'inpakpapier' worden voor eender welk ander type (zie [hier](https://en.wikipedia.org/wiki/Wrapper_function) om te begrijpen waarom wrappers nuttig kunnen zijn):
 
@@ -332,7 +332,7 @@ Object obj = unknownWrapper.get(); // OK
 
 Dit kan nuttig zijn indien men een bepaalde generic doorgeven van A over B naar C waarbij A en C wel willen weten wat er in de generic zit maar dat B daar eingelijk geen zaken mee heeft (denk aan een pakjes dienst).
 
-![](https://www.freightcowboy.com/site/wp-content/uploads/2018/06/Parcel-Service-Failure.jpg)
+![Delivery guy](https://www.freightcowboy.com/site/wp-content/uploads/2018/06/Parcel-Service-Failure.jpg)
 
 ---
 

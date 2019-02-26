@@ -4,7 +4,7 @@
 
 In Java Advanced worden geavanceerde topics geïntroduceerd. Deze Java Recap dient in de eerste plaats om kort een aantal basishandelingen in Java op te frissen. De meeste ideeën in dit onderdeel kan je terug vinden in het boek: *Beginning Java 8 Fundamentals* van (2014) van Kishori Sharan<sup>1</sup>.
 
-![Beginning Java 8 Fundamentals](Java_Adv_1819_Recap/Sharan_01.jpg)
+![Beginning Java 8 Fundamentals](Media/Sharan_01.jpg)
 
 Dit boek is voor AP studenten gratis downloadbaar via UA bibliotheken. Op https://start.ap.be/ kies je voor *Bibliotheek en databanken* en daarna voor *Catalogus en online diensten* waar je zoekt op `Sharan Java`. Je merkt dat dit boek een eerste van een trilogie is met als ander titels *Beginning Java 8 Language Features* en *Java 8 APIs, Extensions and Libraries*. Deze boeken zijn eveneens gratis downloadbaar en komen in andere colleges nog aan bod. De drie boeken uit de trilogie kan je downloaden door op de webpagina met de zoekresultaten van de catalogus telkens op het boek te klikken en dan de link te klikken naast *E-Info*. Je komt dan op een webpagina van SpringerLink terecht waar je het boek in zijn geheel of hoofdstuk-per-hoofdstuk kan downloaden in 2 verschillende formaten. De broncode kan je van [github](https://github.com/apress/beg-java-8-fundamentals) downloaden.
 
@@ -18,7 +18,7 @@ Sommigen zullen hier misschien een 'Jip en Janneke'-schrijfstijl in herkennen. H
 
 Je hebt uiteraard het internet ter beschikking als je met bepaalde vragen zit. Daar kan je allerhande fora raadplegen op zoek naar iemand die een gelijkaardige vraag wist te beantwoorden. Toch is dat niet voldoende. Wil je je als Java ontwikkelaar respecteren, dan moet je echter ook goed je weg kunnen vinden in de officiële documentatie. Voor versie JDK11 kan je terecht op de [documentatie van Oracle](https://docs.oracle.com/en/java/javase/11/docs/api/index.html). Nog een goede raad. Je zal heel wat waarschuwingen en foutboodschappen te zien krijgen zoals de `NumberFormatException` of de `NullPointerException`, voornamelijk gegenereerd door `javac.exe`. Probeer elke nieuwe fout die je tegenkomt op te zoeken.
 
-![Beginning Java 8 Fundamentals](Java_Adv_1819_Recap/Doc.jpg)
+![Beginning Java 8 Fundamentals](Media/Doc.jpg)
 
 ### Codeerstijl
 
@@ -58,7 +58,7 @@ Er is maximaal één pakket declaratie en de onderdelen van de pakketnaam komen 
 
 > Oef Recap.1
 
-![Role of the class loader](Java_Adv_1819_Recap/Class_Loader.png)
+![Role of the class loader](Media/Class_Loader.png)
 
 Je zou moeten weten dat het compileren van een `.java` bestand naar een `.class` bestand door `javac.exe` gebeurt en architectuur-onafhankelijk is. Het `.class` bestand bevat de zogenaamde *bytecode* en je kan deze zichtbaar maken door een decompiler te gebruiken.
 
@@ -279,7 +279,7 @@ In java bestaan er de volgende toegankelijkheidsniveaus:
 - `public`: toegankelijk buiten het pakket
 - `protected`: toegankelijk binnen pakket en alle subklassen
 
-![Toegankelijkheidsniveaus](Java_Adv_1819_Recap/Access.png)
+![Toegankelijkheidsniveaus](Media/Access.png)
 
 Om effectief toegang te krijgen to de nodige types kan het natuurlijk zijn dat je een `import` statement moet invoegen. Denk er dan aan dat expliciete imports (*single-type imports*) altijd beter zijn en de voorkeur krijgt t.o.v. het gebruik van een filter mask als in `java.lang.*` (*on-demand imports*). Voor het importeren van statische variabelen of methoden van types kan je een statische import gebruiken (e.g. `import static java.lang.System.out;` en `import static java.lang.Math.*;`). 
 

@@ -64,7 +64,7 @@ Op Digitap staat een boek vermeld: Sierra K en Bates B (2005)<sup>1</sup>. Dit b
 
 - Surf naar [de download pagina van Oracle](https://www.oracle.com/technetwork/java/javase/downloads/jdk11-downloads-5066655.html)
 - Op deze pagina, onderaan, kies je voor 'Accept License Agreement' en kies je het gepaste bestand uit de lijst:
-![](Java_Adv_1819_Annotations/Installation_01.jpg)
+![Java installation](Media/Installation_01.jpg)
 - Installeer op jouw lokale machine, er volgen een aantal schermen waarop je de standaardwaarden kan accepteren
 
 ### <a name="VS_Install"></a>Installatie Visual Studio Code

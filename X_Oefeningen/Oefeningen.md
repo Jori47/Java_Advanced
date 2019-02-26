@@ -57,7 +57,7 @@ Tracht het `ProgramParts.class` bestand uit de Oef Recap.1 te decompileren. Gebr
 
 Gebruik naar keuze `for`, `while`, `if` en andere constructies om rechtstreeks vanuit een main methode de onderstaande correlatiematrix in de console af te drukken (niet de lijntjes, enkel de kolom en rij hoofdingen en de inhoud van de matrix).
 
-![Correlatiematrix](X_Oefeningen/Corr_Matrix.png)
+![Correlatiematrix](Media/Corr_Matrix.png)
 
 Vertrek vanuit een twee-dimensionale array van het gepaste type. Druk eerste de matrix volledig af en druk daarna de onderste halve matrix af (enkel de waarden *onder* de diagonaal). Maak een versie die gebruik maakt van een gewone `for`-lus en eentje die van een `for each` gebruik maakt. Werk met arrays.
 
