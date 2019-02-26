@@ -1,5 +1,5 @@
 ---
-title: JJAVA Advanced (31089/1607/1819/1/72)
+title: JAVA Advanced (31089/1607/1819/1/72)
 layout: Midnight
 author: David D'Haese
 ---
