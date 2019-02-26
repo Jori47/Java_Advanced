@@ -121,7 +121,7 @@ Maak een klasse `Point` dat voor de coördinaten de publieke object variabelen `
 final int MAX = 10_000;
 ```
 
-Bewaar de gegenereerde punten in een array `points`. Gebruik nu het resultaat van `mijnPunt.hashCode()` om de afstand te berekenen tussen twee willekeurig gekozen punten uit de lijst en herhaal dit `n`-aantal keren (waarbij `n` weer als constante gedefinieerd staat in jouw `main` methode) en bereken telkens het gemiddelde. Hier is de formule voor afstand tussen 2 punten:
+Bewaar de gegenereerde punten in een array `points`. Gebruik nu het resultaat van `mijnPunt.hashCode()` om de afstand te berekenen tussen twee willekeurig gekozen punten uit de lijst en herhaal dit `N`-aantal keren (waarbij `N` weer als constante gedefinieerd staat in jouw `main` methode) en bereken telkens het gemiddelde. Hier is de formule voor afstand tussen 2 punten:
 
 $$d=\sqrt{\Delta x^2+\Delta y^2+\Delta z^2}$$
 
