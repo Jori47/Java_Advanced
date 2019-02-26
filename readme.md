@@ -3,6 +3,8 @@ title: JAVA Advanced (31089/1607/1819/1/72)
 layout: Midnight
 author: David D'Haese
 toc: true
+toc_label: "My Custom Table of Contents Label"
+toc_icon: "gear"
 ---
 
 # JAVA Advanced (31089/1607/1819/1/72)
