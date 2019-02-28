@@ -363,7 +363,7 @@ Probeer een test klasse te schrijven om na te gaan wat er gebeurt indien je:
 
 *Deze oefening dient om op basis van een probleemstelling een zoekopdracht uit te voeren in de documentatie en om een glimp te krijgen van de vrij beschikbare annotatie types.*
 
-In de documentatie van Oracle voor Java 11 staan 47 annotatietypes gedefinieerd. Zoek de overzichtpagina waar deze allemaal staan opgesomd en zoek in deze lijst naar diegene die dient om een gebeurtenisveld te annoteren en om aan te geven dat de waarden van dit veld een tijdsduur aangeven. Maak de gepaste annotatie bij onderstaande klasse zodat de tijsduur van 2.9872 seconden wordt opgegeven:
+In de documentatie van Oracle voor Java 11 staan 47 annotatietypes gedefinieerd. Zoek de overzichtpagina waar deze allemaal staan opgesomd en zoek in deze lijst naar diegene die dient om een gebeurtenisveld te annoteren en om aan te geven dat de waarden van dit veld een tijdsduur aangeven. Maak de gepaste annotatie bij onderstaande klasse zodat de tijdsduur van 2.9872 seconden wordt opgegeven:
 
 ```java
 public class DataFetch extends Event {
