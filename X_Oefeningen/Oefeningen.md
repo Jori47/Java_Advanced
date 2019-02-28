@@ -387,17 +387,20 @@ Stel, een grote toepassing moet gemigreerd worden van Java 5 naar Java 11. Defin
 
 - `team`: een enumeratie (`Group`) met volgende waarden: `CONSULT_1`, `CONSULT_2`, `JAVA_CORE_TEAM`, `DEV_TEAM`
 - `phase`: een integer (standaard = 1)
-- `allowedExceptions`: dit element is een array van het type `Throwable` (of een subklasse ervan) en heeft als standaardwaarde de klasse van `DefaultException`
+- `allowedExceptions`: dit element is een array van het type `Throwable` (of een subklasse ervan) en heeft als standaardwaarde de klasse van de default `Exception` klasse
 - `comment`: een String (standaard leeg) om uitleg mee te geven omtrent de uit te voeren migratie
 
 Zorg dat onderstaande annotaties geen CT fouten genereren:
 
 ```java
 @Migration ( Group.JAVA_CORE_TEAM )
-@Migration ( group=Group.JAVA_CORE_TEAM, phase=3, allowedExceptions = {IllegalClassFormatException, IOException.class}, comment="Could be moved to phase 2 if we decide to implement EARTA.")
+@Migration ( Group.JAVA_CORE_TEAM, phase=3,
+	allowedExceptions = {IllegalClassFormatException, IOException.class},
+	comment="Could be moved to phase 2 if we decide to implement EARTA.")
+class MyClass {}
 ```
 
-Zorg er verder voor dat dit type tijdens runtime gelezen kan worden en dat het enkel op methoden en klassen kan gebruikt worden. Probeer het dan eens uit op een ander element en observeer de melding die er gegeven wordt.
+Zorg er verder voor dat dit type tijdens gelezen kan worden en dat het enkel op methoden en klassen kan gebruikt worden. Probeer het dan eens uit op een ander element en observeer de melding die er gegeven wordt.
 
 ### Lambda Expressies [155 min]
 #### Oef Lambda.1 [35 min]

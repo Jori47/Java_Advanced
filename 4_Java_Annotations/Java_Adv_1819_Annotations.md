@@ -176,7 +176,7 @@ public class DefaultException extends java.lang.Throwable {
 }
 ```
 
-De `@Retention` meta-annotatie geeft aan wanneer het annotatie type beschikbaar wordt gemaakt, in dit geval is dat tijdens runtime. De `@Target` meta-annotatie beperkt het gebruik van de annotatie enkel voor bij methoden. 
+De `@Retention` meta-annotatie geeft aan wanneer het annotatie type beschikbaar wordt gemaakt, in dit geval is dat tijdens runtime. De `@Target` meta-annotatie beperkt het gebruik van de annotatie enkel voor bij methoden.voor bij methoden. 
 
 Hier is een lijstje met de meest populaire meta-annotaties:
 
