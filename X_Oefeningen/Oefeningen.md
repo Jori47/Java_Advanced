@@ -416,6 +416,28 @@ List<Student> deTop = Reduce.filter(studenten, s -> s.getScore() > 15 );
 
 Lees [dit article](https://javarevisited.blogspot.com/2014/02/10-example-of-lambda-expressions-in-java8.html) grondig.
 
+### Hibernate [13 hrs]
+#### Oef Hib.1 [300 min]
+
+Op basis van `battles.csv` en `character-deaths.csv` van de 'Game of Thrones' dataset van Kaggle en vertrekkende van een Maven Quickstart Archetype maak je een toepassing die de data uit beide tabellen inleest en volgens onderstaand model wegschrijft naar een gelijknamige Microsoft SQL Server databank. 
+
+![Battle of thrones model](Media/BOT_Model.png)
+
+Gebruik hier XML (geen annotaties). Query daarna de databank en doe het volgende:
+
+- Geef de top-10 terug van wie er het vaakst (via allegiance) aan de winnende zijde heeft gestaan? Hou rekening met sterftejaar.
+- Druk een tabelletje af met in de eerste kolom Battle type en in de tweede kolom het aantal betrokken commanders 
+
+Tip: de Excel Viewer extensie helpt om csv bestanden te visualiseren indien je liever Microsoft Excel Viewer
+
+#### Oef Hib.2 [180 min]
+
+Maak een HyperSQL databank van de `Ontology <Human, Human, Link>` klasse uit Oef Coll.4. Voeg hierin alle relaties toe uit Oef Hib.1 van de types `A commanded B`, `A was in allegiance with B`, `A fought the same battle as B`. Gebruik hier annotaties.
+
+#### Oef Hib.3 [300 min]
+
+Vertrekkende van de klassen-structuur uit Oef Inn.1, maak een persistente databank. Gebruik annotaties. Voer Oef Inn.1 opnieuw uit maar persisteer in databank ipv afdrukken naar console.
+
 ### Referenties
 
 ||Literatuur|
