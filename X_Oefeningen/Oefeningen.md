@@ -1,5 +1,5 @@
 # JAVA Advanced (31089/1607/1819/1/72)
-## Oefeningen [&plusmn;16 hrs and counting...]
+## Oefeningen [&plusmn; 28 hrs]
 ### Oefeningen Recap [3 hrs]
 #### Oef Recap.1 [20 min]
 
@@ -146,7 +146,7 @@ Maak een generieke klasse `Ontology` waarin objecten met elkaar geassocieerd kun
 
 Implementeer de klasse eerst om relaties tussen `String` objecten af te handelen en daarna om relaties tussen `Human` objecten af te handelen.
 
-#### Oef Coll.5 [15 min] (extra)
+#### Oef Coll.5 [15 min] (verdieping - optioneel)
 
 *Deze oefening dient om de flexibiliteit van enumeraties te demonstreren.*
 
@@ -437,9 +437,9 @@ Tip: de Excel Viewer extensie helpt om csv bestanden te visualiseren indien je l
 
 Maak een HyperSQL databank van de `Ontology <Human, Human, Link>` klasse uit Oef Coll.4. Voeg hierin alle relaties toe uit Oef Hib.1 van de types `A commanded B`, `A was in allegiance with B`, `A fought the same battle as B`. Gebruik hier annotaties.
 
-#### Oef Hib.3 [300 min]
+#### Oef Hib.3 [300 min] (verdieping - optioneel)
 
-Vertrekkende van de klassen-structuur uit Oef Inn.1, maak een persistente databank. Gebruik annotaties. Voer Oef Inn.1 opnieuw uit maar persisteer in databank ipv afdrukken naar console.
+Probeer om, vertrekkende van de klassen-structuur uit Oef Inn.1, een persistente databank te maken. Gebruik annotaties. Voer Oef Inn.1 opnieuw uit maar persisteer in databank ipv afdrukken naar console.
 
 ### Referenties
 
