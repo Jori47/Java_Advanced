@@ -13,7 +13,7 @@ interface StringToIntMapper {
 StringToIntMapper mapper = (String str) -> str.length();
 ```
 
-De compiler controleert dat de in- and outs van de lambda overeenkomt met die van de `map` methode vande `StringToIntMapper` interface.
+De compiler controleert dat de in- and outs van de lambda overeenkomt met die van de `map` methode van de `StringToIntMapper` interface.
 De speciale verkorte schrijfwijze, die symbool staat voor de instantiëring van de functionele interface, kan als volgt worden samengevat:
 
 ```java
@@ -33,7 +33,9 @@ x -> x + 1
 }
  ```
 
-De eerste van de expressies hierboven staat bekend als een impliciet lambda (*implicit lambda* of voluit *implicitly-typed lambda expression*), de tweede is een expliciete lambda (*explicit lambda expression*). Merk op dat er verkorter schrijfwijzen bestaan waarin haakjes niet meer nodig zijn en dat de compiler uit de context zelf een heleboel probeert af te leiden zoals het return type (*target typing*), parameter types en dergelijke. Het zal een CT foutmelding geven wanneer het die informatie niet uit de context kan afleiden. Een lambda body met een typering dat afhangt van de context noemt men een *poly expression* en de context noemt men de *poly context*. Een expressie waarbij het type gekend is noemt men een *standalone expression*.
+De eerste van de expressies hierboven staat bekend als een impliciet lambda (*implicit lambda* of voluit *implicitly-typed lambda expression*), de tweede is een expliciete lambda (*explicit lambda expression*). Merk op dat er verkorter schrijfwijzen bestaan waarin haakjes niet meer nodig zijn en dat de compiler uit de context zelf een heleboel probeert af te leiden zoals het return type (*target typing*), parameter types en dergelijke. Het zal een CT foutmelding geven wanneer het die informatie niet uit de context kan afleiden.
+
+[*Verdieping*] Een lambda body met een typering dat afhangt van de context noemt men een *poly expression* en de context noemt men de *poly context*. Een expressie waarbij het type gekend is noemt men een *standalone expression*.
 
 ### Generieke functionele interface
 
@@ -75,6 +77,66 @@ public class MapperTest {
 	}
 }
 ```
+
+<div style="color:orange;">
+
+#### Deep dive
+
+Laten we het bovenstaande code eens grondig onderzoeken. We beginnen met de opdracht
+
+```java
+int[] lengthMapping = Mapper.mapToInt(&hellip;);
+```
+
+Een mapper dient om objecten van type `A` om te zetten naar objecten van type `B`. We willen niet enkel zo een mapper definiëren maar ook meteen uitvoeren (EN: to *apply* the lambda). Als we deze code volgen staat er in feite dat er een statische methode `mapToInt` op interface `Mapper` wordt uitgevoerd en het resultaat in `lengthMapping` wordt geplaatst. We weten trouwens dat het om een statische methode moet zijn omdat we deze vanaf de interface wordt aanroepen (`Mapper` met hoofdletter!) en niet van een object dat de interface implementeert. Wacht eens even&hellip; een statische methode op een interface? Ja, het kan! Vanaf Java 8 kan je een statische methode op een interface hebben als 1. deze is uitgeschreven is (i.e. niet abstract is) en public staat!
+
+We willen nu de actuele parameters voor de methode opgeven, maar wat is de signatuur (*signature*) van `mapToInt`? Alvorens we dat onderzoeken moeten we een kijkje namen naar de interface:
+
+```java
+@FunctionalInterface
+public interface Mapper<T> {
+	int map(T source);
+}
+```
+
+Om te beginnen zien we dat de interface generiek is. Een Functionele interface heeft per definitie slechts één (abstracte) methode en hier is dat `map`. Daarmee weten we dat onze lambda expressie een mapper is van `T` naar `int`, waarbij `T` dus zelf in te vullen is. Het kan dus van `String` -> `int` omzetten of bijvoorbeeld van `Person` -> `int` omzetten. OK, nu terug naar de `mapToInt` methode:
+
+```java
+public static <U> int[] mapToInt(U[] list, Mapper<? super U> mapper) {
+	...
+}
+```
+
+Wat? Misschien even vereenvoudigen:
+
+```java
+... mapToInt( ...[] list, Mapper ... mapper) { ... }
+```
+
+De methode heeft dus 2 formele parameters. De eerste is een array (`[]`), de tweede een instantiëring van de interface. Waarom een array aanvaarden eigenlijk? Omdat we, zo betaamt een goede mapper, tegelijkertijd veel objecten willen kunnen mappen. Bij een `Person` -> `int` mapper, willen we bijvoorbeeld `Person[] randomDudes` kunnen doorgeven. De tweede parameter is dus een `Mapper` naar keuze. Dit is de lambda expressie, de anonieme functie zo je wil. Hier zijn wat fictieve voorbeelden voor deze parameter:
+
+```java
+randomDude -> randomDude.friends.size()
+randomDude -> randomDude.age()
+randomDude -> randomDude.score * 200
+```
+
+Maar de eerste parameter is een `Array` van het type `U` (`U[]`) en de tweede is van het type `Mapper<? super U>`. `U` is dus opnieuw een generiek type dat ook vooraan in de declaratie van de methode staat (`public static <U> ...`). Dit type kan, maar moet niet per sé gelijk zijn aan `T`. Waarom is er een tweede generiek type? Het antwoord is dat we een mapper zoals bijvoorbeeld `mapper<Person>` naast `Person[] randomDudes` ook willen kunnen 'voeden' met zoiets als `Student[] randomStudents` of `Lector[] randomLectors`. Dus in feite kunnen we zeggen dat `<? super U>` overeenkomt met `T`. Omdat de methode statisch is, kun je echter niet vanuit de methode signatuur verwijzen naar `T`, anders had je `<U>` kunnen vervangen door `<U extends T>` en `<? super U>` door `<T>`.
+
+Tenslotte kijken we naar de inhoud van `mapToInt`:
+
+```java
+int[] mappedValues = new int[list.length];
+
+for (int i = 0; i < list.length; i++) {
+	mappedValues[i] = mapper.map(list[i]);
+}
+
+return mappedValues;
+```
+
+Hier wordt er elk element van de input array `list` aan de mapping onderworpen en het resultaat in een nieuwe array `mappedValues` geplaatst. 
+</div>
 
 ### Doorsnede types (*Intersection types*)
 
