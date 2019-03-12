@@ -356,7 +356,7 @@ Probeer een test klasse te schrijven om na te gaan wat er gebeurt indien je:
 1. Titels toevoegt
 2. Een `titleIterator()` declareert en bewaart om doorheen de lijst te lopen
 3. Opnieuw titels toevoegt
-4. Opnieuw de `titleIterator()` gebruikt om de lijst te doorlopen. Worden de laatst toegevoegde titels door de iterator opgepikt?
+4. Opnieuw de `titleIterator()` gebruikt om de lijst te doorlopen. Worden de laatst toegevoegde titels door de iterator opgepikt? Waarom?
 
 ### Annotaties [40 min]
 #### Oef Ann.1 [10 min]
