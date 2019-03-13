@@ -417,10 +417,14 @@ List<Student> deTop = Reduce.filter(studenten, s -> s.getScore() > 15 );
 
 #### Oef Lambda.2 [120 min]
 
+*Deze lees-oefening helpt om zich in het principe van streams te verdiepen en laat een aantal mooie voorbeelden van lambda expressies zien.*
+
 Lees [dit article](https://javarevisited.blogspot.com/2014/02/10-example-of-lambda-expressions-in-java8.html) grondig.
 
 ### Hibernate [13 hrs]
 #### Oef Hib.1 [300 min]
+
+*Deze oefening leert om een klassenstructuur op te zetten die overeenkomt met een voorgedefinieerd databankmodel. Verder leert het om data weg te schrijven naar de DB.*
 
 Op basis van `battles.csv` en `character-deaths.csv` van de 'Game of Thrones' dataset van Kaggle en vertrekkende van een Maven Quickstart Archetype maak je een toepassing die de data uit beide tabellen inleest en volgens onderstaand model wegschrijft naar een gelijknamige Microsoft SQL Server databank. 
 
@@ -431,15 +435,88 @@ Gebruik hier XML (geen annotaties). Query daarna de databank en doe het volgende
 - Geef de top-10 terug van wie er het vaakst (via allegiance) aan de winnende zijde heeft gestaan? Hou rekening met sterftejaar.
 - Druk een tabelletje af met in de eerste kolom Battle type en in de tweede kolom het aantal betrokken commanders 
 
-Tip: de Excel Viewer extensie helpt om csv bestanden te visualiseren indien je liever Microsoft Excel Viewer
-
 #### Oef Hib.2 [180 min]
 
-Maak een HyperSQL databank van de `Ontology <Human, Human, Link>` klasse uit Oef Coll.4. Voeg hierin alle relaties toe uit Oef Hib.1 van de types `A commanded B`, `A was in allegiance with B`, `A fought the same battle as B`. Gebruik hier annotaties.
+Maak een HyperSQL databank van de `Ontology <Human, Human, Link>` klasse uit Oef Coll.4. Voeg hierin alle relaties toe uit Oef Hib.1 van de types `A commanded B`, `A was in allegiance with B` en `A fought the same battle as B`. Gebruik hier annotaties.
 
 #### Oef Hib.3 [300 min] (verdieping - optioneel)
 
 Probeer om, vertrekkende van de klassen-structuur uit Oef Inn.1, een persistente databank te maken. Gebruik annotaties. Voer Oef Inn.1 opnieuw uit maar persisteer in databank ipv afdrukken naar console.
+
+### JavaFX [3 hrs]
+#### Oef JavaFX.1 [1 hr]
+
+*Deze oefening is een laagdrempelige opstap om een eerste JavaFX applicatie te maken. Er wordt gestimuleerd om eerdere opgedane vaardigeheden in de oefening te verwerken*.
+
+Maak een eenvoudige JavaFX toepassing die een lijst weergeeft van de draaiende processen op jouw PC waarvoor een gebruiker gekend is. 
+
+![Processes](Media/Processes.png)
+
+De titel van de applicatie is `ProcessViewer`, net als de naam van de hoofdklasse (*main class*). De scene graph moet er als volgt uitzien:
+
+```
+Stage stage
+  └── Scene scene
+        └── ListView<String> processListView
+```
+
+De `processListView` wordt voor deze oefening rechtstreeks opgevuld met een lijst van `String`. Zoek uit welk setter je daarvoor nodig hebt. Schrijf een methode `getProcessesInfo()` in de `ProcessViewer` klasse om deze lijst van `string` te genereren. Zoek zelf uit hoe je een lijst van de processen moet ophalen uit jouw systeem. Als je eindelijk jouw lijst van processen hebt, dan moet je deze filteren op processen waarvoor een gebruiker gekend is. Dit doe je met `.filter(p -> p.info().user().orElse (null) != null )`. Schrijf daarna een methode `getProcessInfo` die je met de methode referentie `ProcessViewer::getProcessInfo` kan aanroepen. In `getProcessInfo()` haal je dan de ID van het process op alsook het volledig pad van het desbetreffend programma bestand (zie voorbeeld hierboven). Dit kan d.m.v. `String.format ("%d (%s)", ..., ...)`.
+
+Alle code (max 50 lijnen code in totaal) zet je in `ProcessViewer.java`.
+
+> Tip: als je tijdens het zoeken naar een oplossing om een lijst van processen op te halen denkt `InputStreamReader` en `Runtime` nodig te hebben, dan ben je op het foute spoor!
+
+#### Oef JavaFX.2 [45]
+
+*Deze oefening leert omgaan met een nieuw type control.*
+
+Maak een toepassing/hoofdklasse `Partitions` die een taartdiagram toont. Het diagram moet de relatieve grootte van de partities van jouw harde schijf laat zien:
+
+![Partitions](Media/Partitions.png)
+
+Aantal verwachte niet-lege lijnen code max 35.
+
+> Tip: Zo zet je een variabele van het type `File` om in eentje van het type `PieChart.Data`: `.map(f -> new PieChart.Data(file.toString(), file.getTotalSpace()))`.
+
+#### Oef JavaFX.3 [45 min]
+
+*Deze oefening leert om een Listview te koppelen aan een observeerbare lijst van objecten*
+
+Pas de oplossing van de oefening JavaFX.1 aan zodat er nu met een lijst van Processen i.p.v. een lijst van String gewerkt wordt:
+
+```
+Stage stage
+  └── Scene scene
+        └── Group root
+              ├── control.Button refresh
+              └── ListView<ProcessHandle> processListView
+```
+
+Maak voor het binden van de data aan `processListView` gebruik van de constructie `setCellFactory(p -> new ListCell<ProcessHandle>() {...` en overschrijf de `updateItem` methode van de callback.
+
+Voeg aan de data nu ook het tijdstip toe waarop het proces gestart werd. Een ListCell bevat nu drie items en je moet ervoor zorgen dat deze in afzonderlijke labels staan. De uitlijning moet ongeveer zo zijn (het pad in maximaal 2 regels):
+
+```
+|pid 45643                        2019-07-12 12:34|
+|c:\hier\komt dan\het desnoods wel erg lang pad\na|
+|ar het bestand dat verantwoordelijk\is voor dit\…|
+```
+
+Geef aan dat het venster minimaal 250 pixels breed mag zijn.
+
+Voeg nu ook de knop toe 'Refresh' waarmee een nieuwe snapshot van de processen wordt genomen en de lijst automatisch wordt ververst. Maak voor de afhandeling van de `setOnAction` methode en event handling gebruik van een lambda expressie.
+
+#### Oef JavaFX.4 [30 min]
+
+Maak een toepassingen met alleen maar gekleurde panes zodat dit mooi Mondriaans plaatje ontstaat:
+
+![Mondriaans patroon van panes](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Tableau_I%2C_by_Piet_Mondriaan.jpg/375px-Tableau_I%2C_by_Piet_Mondriaan.jpg)
+
+Maak gebruik van een undecorated stage.
+
+#### Oef JavaFX.5 [? min] (verdieping - optioneel)
+
+Maak een clone van de Javafx_04 oplossing van de TimesUp toepassing (github) die tijdens de theorie werd besproken. Bekijk de code grondig en bekijk de slides. Kijk naar de analyse of je sommige voorstellen zoals de academische kalender zelf kan implementeren. Je mag ook zelf nadenken over originele uitbreidingen (toevoegen van functionaliteit zoals een chronometer) of verbeteringen van de bestaande code en deze dan ook implementeren. Nadat je alles getest hebt, mag je jouw code zeker indienen of doorsturen.
 
 ### Referenties
 
