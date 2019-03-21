@@ -394,8 +394,8 @@ Zorg dat onderstaande annotaties geen CT fouten genereren:
 
 ```java
 @Migration ( Group.JAVA_CORE_TEAM )
-@Migration ( Group.JAVA_CORE_TEAM, phase=3,
-	allowedExceptions = {IllegalClassFormatException, IOException.class},
+@Migration ( team=Group.JAVA_CORE_TEAM, phase=3,
+	allowedExceptions = {IllegalClassFormatException.class, IOException.class},
 	comment="Could be moved to phase 2 if we decide to implement EARTA.")
 class MyClass {}
 ```
@@ -517,6 +517,47 @@ Maak gebruik van een undecorated stage.
 #### Oef JavaFX.5 [? min] (verdieping - optioneel)
 
 Maak een clone van de Javafx_04 oplossing van de TimesUp toepassing (github) die tijdens de theorie werd besproken. Bekijk de code grondig en bekijk de slides. Kijk naar de analyse of je sommige voorstellen zoals de academische kalender zelf kan implementeren. Je mag ook zelf nadenken over originele uitbreidingen (toevoegen van functionaliteit zoals een chronometer) of verbeteringen van de bestaande code en deze dan ook implementeren. Nadat je alles getest hebt, mag je jouw code zeker indienen of doorsturen.
+
+### Spring Boot
+#### Oef Spring.1
+
+*De bedoeling van deze oefening is om vertrouwd te geraken met het Spring Boot framework*
+ 
+Bestudeer grondig de oplossing
+
+Oplossing van de Face-recognition ap staat op de solution branch: https://github.com/TomCools/Spring-Boot-Face-API
+
+Youtube tutorial (oefening): https://www.youtube.com/watch?v=SdyjxlgIE04&t
+ 
+Slides:  https://tomcools.be/pdf/AP-Spring-Session.pdf
+ 
+Om de oplossing te testen moeten studenten hun gezicht toevoegen aan herkenning software.
+Dit kunnen ze op: https://ap-spring-face-adder.azurewebsites.net/.
+Sterk aan te raden om hier een valse naam te gebruiken.
+Binnen 3 weken gooi ik alle data weg en gaat deze website offline.
+ 
+De (werkende) applicatie staat ook publiek op Azure: https://ap-spring-face-solution.azurewebsites.net/
+Deze kan iedereen gebruiken, maar je ziet dan ook alles wat andere mensen hebben ingevuld.
+Ik haal deze offline van zodra ik merk dat er niet correcte dingen op verschijnen.
+Ook deze website gaat binnen 3 weken offline.
+ 
+Verder hoor ik graag of er opmerkingen vanuit de studenten of vanuit u waren. Zo heb ik ook werkpunten om mezelf te verbeteren!
+ 
+Met vriendelijke groet,
+ 
+Tom Cools
+Consultant 
+
+e-mail: tom.cools@infosupport.com
+mobiel: +32 (0)471 765 062
+
+Info Support
+Generaal De Wittelaan 17 - bus 30 
+2800 Mechelen
+tel: +32 (0)15 286 370
+www.infosupport.com
+ 
+
 
 ### Referenties
 
