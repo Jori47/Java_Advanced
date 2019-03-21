@@ -1,5 +1,5 @@
 # JAVA Advanced (31089/1607/1819/1/72)
-## Oefeningen [&plusmn; 28 hrs]
+## Oefeningen
 ### Oefeningen Recap [3 hrs]
 #### Oef Recap.1 [20 min]
 
@@ -518,13 +518,14 @@ Maak gebruik van een undecorated stage.
 
 Maak een clone van de Javafx_04 oplossing van de TimesUp toepassing (github) die tijdens de theorie werd besproken. Bekijk de code grondig en bekijk de slides. Kijk naar de analyse of je sommige voorstellen zoals de academische kalender zelf kan implementeren. Je mag ook zelf nadenken over originele uitbreidingen (toevoegen van functionaliteit zoals een chronometer) of verbeteringen van de bestaande code en deze dan ook implementeren. Nadat je alles getest hebt, mag je jouw code zeker indienen of doorsturen.
 
-### Spring Boot
-#### Oef Spring.1
+### Spring Boot [1 hr]
+#### Oef Spring.1 [1 hr]
 
 *De bedoeling van deze oefening is om vertrouwd te geraken met het Spring Boot framework*
  
- 
+Bestudeer grondig de oplossing van de Spring Boot Workshop van Meneer Cools. Oplossing van de Face-recognition ap staat op de [solution branch](https://github.com/TomCools/Spring-Boot-Face-API). Gebruik de [Youtube tutorial](https://www.youtube.com/watch?v=SdyjxlgIE04&t) en de [presentatie](https://tomcools.be/pdf/AP-Spring-Session.pdf) om het geheel te begrijpen.
 
+Om de oplossing te testen moet je jouw/een gezicht toevoegen aan herkenning software op https://ap-spring-face-adder.azurewebsites.net/. Het wordt sterk aangeraden om hier een valse naam te gebruiken. Een werkende versie vind je hier: https://ap-spring-face-solution.azurewebsites.net/ (er is controle op misbruik!).
 
 ### Referenties
 
