@@ -523,39 +523,6 @@ Maak een clone van de Javafx_04 oplossing van de TimesUp toepassing (github) die
 
 *De bedoeling van deze oefening is om vertrouwd te geraken met het Spring Boot framework*
  
-Bestudeer grondig de oplossing
-
-Oplossing van de Face-recognition ap staat op de solution branch: https://github.com/TomCools/Spring-Boot-Face-API
-
-Youtube tutorial (oefening): https://www.youtube.com/watch?v=SdyjxlgIE04&t
- 
-Slides:  https://tomcools.be/pdf/AP-Spring-Session.pdf
- 
-Om de oplossing te testen moeten studenten hun gezicht toevoegen aan herkenning software.
-Dit kunnen ze op: https://ap-spring-face-adder.azurewebsites.net/.
-Sterk aan te raden om hier een valse naam te gebruiken.
-Binnen 3 weken gooi ik alle data weg en gaat deze website offline.
- 
-De (werkende) applicatie staat ook publiek op Azure: https://ap-spring-face-solution.azurewebsites.net/
-Deze kan iedereen gebruiken, maar je ziet dan ook alles wat andere mensen hebben ingevuld.
-Ik haal deze offline van zodra ik merk dat er niet correcte dingen op verschijnen.
-Ook deze website gaat binnen 3 weken offline.
- 
-Verder hoor ik graag of er opmerkingen vanuit de studenten of vanuit u waren. Zo heb ik ook werkpunten om mezelf te verbeteren!
- 
-Met vriendelijke groet,
- 
-Tom Cools
-Consultant 
-
-e-mail: tom.cools@infosupport.com
-mobiel: +32 (0)471 765 062
-
-Info Support
-Generaal De Wittelaan 17 - bus 30 
-2800 Mechelen
-tel: +32 (0)15 286 370
-www.infosupport.com
  
 
 
