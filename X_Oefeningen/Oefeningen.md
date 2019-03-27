@@ -111,7 +111,7 @@ out.println ( "The answer is " +
 
 Maak een `Human` klasse aan om deze code te kunnen uitesten vanuit de `HumanTest` klasse. Probeer zowel de `.hashCode()` en `Objects.hash()` methodes eens aan te roepen en vergelijk het resultaat. In de Oracle documentatie staat ook iets over deze vergelijking. Zoek het op en lees het. Kijk daarna eens wat gebeurt er als je twee `Human`-objecten aanmaakt met dezelfde naam en geslacht. Hebben deze twee objecten dan dezelfde hash code?
 
-#### Oef Coll.2 [120 min]
+#### Oef Coll.2 [120 min] (Solution available)
 
 *Deze oefening laat zien hoe je een slimme hash-code kan maken;*
 
@@ -133,7 +133,7 @@ waarbij bijvoorbeeld $\Delta x^2=(x_2 - x_1)^2$. Controleer of bij toenemende `N
 
 Maak een generieke klasse `KeyValues` die zogenaamde [key-value pairs](https://en.wikipedia.org/wiki/Key-value_database) bijhoudt. Initialisatie gebeurt door middel van twee arrays. Een getter geeft de value terug op basis van een key. Denk na over de toegelaten types.
 
-#### Oef Coll.4 [60 min]
+#### Oef Coll.4 [60 min] (Solution available)
 
 *Deze oefening moet aanleren om zelf een functionele generiek klasse aan te maken.* 
 
@@ -255,7 +255,7 @@ Probeer nu in bovenstaande code gebruik te maken van een for-each lus en je zou 
 Maak een nieuwe set aan (`Set`) en voeg eens twee dezelfde waarden toe. Wat gebeurt er? Krijg je een foutmelding?
 
 ### Inner classes [3 hrs 45 min]
-#### Oef Inn.1 [40 min]
+#### Oef Inn.1 [40 min] (Solution available)
 
 *Deze oefening dient om eens kennis te maken met inner klassen en het aanmaken van inner objecten.*
 
@@ -282,7 +282,7 @@ Invoice No <Invoice.number>
 
 Maak een klasse `Library` aan met de in elkaar gestelde inner klassen `Cabinet`, `Shelf`, `Book`. Elk van deze klassen heeft een private `id` variabele. Voor de `Library` klasse is de `id` de naam van de bibliotheek, voor de anderen een oplopend natuurlijk getal beginnend met 1. De klasse `Book` heeft een methode `getFullId()` die met `String` teruggeeft die bestaat uit de door een `.` gescheiden aaneenschakeling van de `id`'s van alle omliggende klassen (e.g. 'LeuvenseStadsBibliotheek.131.3.28').
 
-#### Oef Inn.3 [120 min]
+#### Oef Inn.3 [120 min] (Solution available)
 
 *Deze oefening dient om te laten inzien dat overerving onafhankelijk is en combineerbaar met het systeem van een hiërarchische boomstructuur van inner klassen. Het is ook een herhaling op het gebruik van de juiste types collecties.*
 
@@ -379,7 +379,7 @@ public class DataFetch extends Event {
 }
 ```
 
-#### Oef Ann.2 [30 min]
+#### Oef Ann.2 [30 min] (Solution available)
 
 *Deze oefening dient om ervaring op te doen in het definiëren van nieuwe annotatie types.*
 

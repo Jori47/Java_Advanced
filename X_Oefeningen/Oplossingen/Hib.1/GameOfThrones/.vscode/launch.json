@@ -1,0 +1,11 @@
+{
+	"configurations": [
+		{
+			"type": "java",
+			"name": "CodeLens (Launch) - Program",
+			"request": "launch",
+			"mainClass": "be.ap.javadv.Program",
+			"projectName": "Game_Of_Thrones"
+		}
+	]
+}

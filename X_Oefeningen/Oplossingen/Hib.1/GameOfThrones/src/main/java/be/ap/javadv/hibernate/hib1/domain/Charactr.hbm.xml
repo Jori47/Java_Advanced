@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="be.ap.javadv.hibernate.hib1.domain">
+	<class name="Charactr" table="CHARACTER">
+		<id name="name" />
+		<property name="gender" length="1" />
+		<property name="nobility" type="numeric_boolean"/>
+		<property name="deathYear" column="DEATH_YEAR" />
+	</class>
+</hibernate-mapping>

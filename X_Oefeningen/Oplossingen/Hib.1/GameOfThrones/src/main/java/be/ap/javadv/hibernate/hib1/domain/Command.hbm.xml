@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="be.ap.javadv.hibernate.hib1.domain">
+	<class name="Command">
+		<composite-id>
+			<key-property name="side" />
+			<key-property name="character" length="255" />
+		</composite-id>
+	</class>
+</hibernate-mapping>
